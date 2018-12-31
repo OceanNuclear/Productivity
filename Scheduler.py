@@ -162,8 +162,8 @@ def wrap_up(time, blockOfText):
 	
 	for line in data:	#loop through every line to find a time-statement
 		if TASK and istimestatement(line):#is a timestatment for the task
-			if TASKNUM<=TASK_LIM:
-				(time,line) = duration(time,line)	#update the time.
+			##if TASKNUM<=TASK_LIM:#update the time only if TASK doesn't exceed limit
+			(time,line) = duration(time,line)	#update the time.
 			TIME_DECLARED=True
 		#treat lines that are not time-statements as normal
 		output+=line#convert that line line statement and leave.
@@ -172,19 +172,22 @@ def wrap_up(time, blockOfText):
 
 	if not TASK:#exit function if it's not even a task
 		return(time, output)
-	if TIME_DECLARED or (TASKNUM>TASK_LIM):#exit the function if we don't care about this task
-		if VERBOSE: print (output[:-1])#print the task itself before exiting the function
-		#print(..[-1])avoids printing an extra line!
-		return(time,output)
+	#only TASKs remains
+	if VERBOSE: print (output[:-1])#print the task itself before going any futher.
+	#print(...[-1])avoids printing an extra line!
+	
+	if TIME_DECLARED:return(time,output)#exit the function if we don't care about this task
 
-	#Only tasks that you care about AND still doesn't have TIME_DECLARED gets passed down here.
-	if VERBOSE: print(output[:-1])#print the task that it's trying to figure out the time for
-	#Try to read the end of the lines for a time
+	#Only tasks that still doesn't have TIME_DECLARED gets passed down here.
+	#Try to read the last bracket for a time
 	testTime_txt = "    "+findLastBracketed(output)+"\n" #Turn that into a proper line
-	if istimestatement(testTime_txt): #prepend four spaces to allow reusing the old function (duration()) in the first case below
+	if istimestatement(testTime_txt): #prepended four spaces, allows for reusing the old function (duration()) in the first case below
 		time, line = duration(time,testTime_txt)
-	else:	#if duration is still not found within the text block
-		line, time,dummy_dt = prompt4time(time)
+	else:	#if a readable "(duration)" is still not found within the text block
+		if (TASKNUM<=TASK_LIM):
+			line, time,dummy_dt = prompt4time(time)
+		else:
+			line=""
 	if VERBOSE: print(line[:-1])
 	output+=line
 	return (time, output)
