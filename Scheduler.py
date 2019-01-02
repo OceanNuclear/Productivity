@@ -48,7 +48,7 @@ def toAPM(time):
 	else:
 		print("I suck at programming. 'Hour' not in bounds")
 		assert type(minutes)==int, ValueError("you suck even more because there's a wrong type")
-	hour = hour%12
+	hour = ((hour-1)%12)+1
 	end_time= str(hour)+":"+'{:02}'.format(minutes)
 	if PM:
 		end_time+="pm"
@@ -76,13 +76,13 @@ def istimestatement(line):	#is a statement that declares the duration of the pre
 		return True#first non-space character is a digit.
 	else:
 		return False
-def string2time(string):
+def string2time(string):#
 	hour_mins=string.split(":")#split the string at the colon.
-	hour = int(hour_mins[0])
-	minutes =0
+	hour = int(hour_mins[0])#choose the first number as the hour
+	minutes = 0	
 	if len(hour_mins)==2:
 		minutes=int(hour_mins[1])
-	elif (len(hour_mins)>2):
+	elif (len(hour_mins)>=1):
 		print("Something's wrong, 2+ ':'s found in the time declaration statement")
 	return (hour, minutes)
 def breakatalhpa(line):
@@ -132,7 +132,7 @@ def duration(time,line):#assume the line already has the relevant time info in i
 	if (_colon and (not _hour) and (not _mins)):
 		#only I:II or II:II
 		#if there is a colon, there shouldn't be any word left on the line.
-		assert len(times)==1, "There are multiple numbers?"
+		assert len(times)==1, "There is a colon but there are multiple numbers separated by letters and spaces?"
 		#only 1 element should remain in 'times', and it must have a ":" in the middle
 		Δt = string2time(times[0])
 	#</extract Δt>
@@ -191,7 +191,7 @@ def wrap_up(time, blockOfText):
 	if VERBOSE: print(line[:-1])
 	output+=line
 	return (time, output)
-def conv2startTime(line, time=current_time):
+def conv2startTime(line):
 	thres =11 #Threshold number of alphabets to cause the line ot be recognized as not a time statement
 	#if it is not a start time statement just return None
 	line = line[:-1]#remove the newline character
@@ -200,23 +200,34 @@ def conv2startTime(line, time=current_time):
 		return None
 	if len(line)<1:
 		return None
-	#if it is a statement with ":" in it
+	#Hopefully only proper time-statements are left;
+	TIME_DECLARED=False#This will help weed out the remaining ones
+	APM= ( ('am' in line) or ("pm" in line) )
+	#(I)I:II(xm)
 	if ":" in line[1:3]:
+		TIME_DECLARED=True
 		if line[1]==":":
 			hour = line[0:1]
 			minute = line[2:4]
 		if line[2]==":":
 			hour = line[0:2]
 			minute = line[3:5]
-		if "pm" in line:
-			hour = str(int(hour)+12)
+		hour=int(hour)
+		minute=int(minute)
+	#I(I)xm declaration
 	if not ":" in line:
-		minute = 0
-		hour = int( line.replace("pm","").replace("am","").split()[0] )
-		if "pm" in line:
-			hour = str(int(hour)+12)
-	time = (int(hour), int(minute))
-	return time
+		if APM:
+			TIME_DECLARED=True
+			hour = int( line.replace("pm","").replace("am","").split()[0] )
+			minute = 0
+	if APM:	#know that when we write 12 o'clock we mean 0 o'clock.
+		assert 1<=hour<=12, "HOUR not in range!"
+		if hour==12: hour=0
+	if ("pm" in line):#turn it back up
+		hour+=12
+	if TIME_DECLARED==True:#if any of the if conditions above were activated:
+		time=(hour,minute)
+		return time
 if __name__=="__main__":
 	f = open("/home/ocean/Desktop/Schedule.txt","r")#hard coded file location
 	text=f.readlines()
@@ -230,7 +241,7 @@ if __name__=="__main__":
 			(current_time,buffer)=wrap_up(current_time,buffer)
 			o.write(buffer);buffer=""#dump and clear buffer.
 			current_time = tried_converting2Time
-			o.write(line)	#write the start time back to the output file.
+			o.write(line)	#write the start time back to the output file (without using buffer)
 		#check if it is a new task/1st level comment
 		elif "[]" in line or indentLvL(line)==0:
 			#end the task at when the next instance is unindented/
