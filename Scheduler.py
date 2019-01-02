@@ -72,7 +72,7 @@ def istimestatement(line):	#is a statement that declares the duration of the pre
 	#print(line[4].isdigit())#first letter must be a digit
 	if line[5]==".":
 		return False
-	elif line[4].isdigit():
+	elif line[4].isdigit() and (('am' in line) or ("pm" in line) or (":" in line) or ("in" in line) or ("our" in line)):#account for 24 hour expression, 12 hours expression, and duration expression
 		return True#first non-space character is a digit.
 	else:
 		return False
