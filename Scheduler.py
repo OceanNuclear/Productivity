@@ -55,13 +55,11 @@ def toAPM(time):
 	elif not PM:
 		end_time+="am"
 	return end_time	#which is a str
-def prompt4time(startTime):
-	string = input("    ->Estimated time required for this task? (please use 24 hours format)\n")
-	(hour,minutes) = string2time(string)
-	Δt = (hour, minutes)
-	time = incrementTime(startTime,Δt)
-	line = "    "+toAPM(time)+" "+str(hour)+":"+"{:02}".format(minutes)+"\n"
-	return line, time,Δt
+def ImprovedPrompt4time(startTime):
+	string = input("    ->Estimated time required for this task?\n")
+	string = "    "+string
+	time,line= duration(startTime,string)
+	return line,time
 def istimestatement(line):	#is a statement that declares the duration of the preceeding task.
 	line=line.replace("(","").replace(")","")
 	assert len(line.split("\n"))==2	#check that it only contains only 1 sentence+1 newline character
@@ -185,7 +183,8 @@ def wrap_up(time, blockOfText):
 		time, line = duration(time,testTime_txt)
 	else:	#if a readable "(duration)" is still not found within the text block
 		if (TASKNUM<=TASK_LIM):
-			line, time,dummy_dt = prompt4time(time)
+			#line, time,dummy_dt = prompt4time(time)
+			line, time = ImprovedPrompt4time(time)
 		else:
 			line=""
 	if VERBOSE: print(line[:-1])
