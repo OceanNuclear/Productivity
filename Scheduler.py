@@ -59,8 +59,8 @@ def ImprovedPrompt4time(startTime):
 	string = input("    ->Estimated time required for this task?\n")
 	string = "    "+string
 	time,line= duration(startTime,string)
-	return line,time
-def istimestatement(line):	#is a statement that declares the duration of the preceeding task.
+	return line+"\n",time
+def istimestatement(line,bracketed=False):	#is a statement that declares the duration of the preceeding task.
 	line=line.replace("(","").replace(")","")
 	assert len(line.split("\n"))==2	#check that it only contains only 1 sentence+1 newline character
 	#print([print(n+"") for n in line[:5]])
@@ -69,8 +69,9 @@ def istimestatement(line):	#is a statement that declares the duration of the pre
 		return False
 	#print(line[4].isdigit())#first letter must be a digit
 	if line[5]==".":
-		return False
-	elif line[4].isdigit() and (('am' in line) or ("pm" in line) or (":" in line) or ("in" in line) or ("our" in line)):#account for 24 hour expression, 12 hours expression, and duration expression
+		if not bracketed:
+			return False
+	if line[4].isdigit() and (('am' in line) or ("pm" in line) or (":" in line) or ("in" in line) or ("our" in line)):#account for 24 hour expression, 12 hours expression, and duration expression
 		return True#first non-space character is a digit.
 	else:
 		return False
@@ -178,16 +179,17 @@ def wrap_up(time, blockOfText):
 
 	#Only tasks that still doesn't have TIME_DECLARED gets passed down here.
 	#Try to read the last bracket for a time
-	testTime_txt = "    "+findLastBracketed(output)+"\n" #Turn that into a proper line
-	if istimestatement(testTime_txt): #prepended four spaces, allows for reusing the old function (duration()) in the first case below
-		time, line = duration(time,testTime_txt)
+	lastBracketedText = "    "+findLastBracketed(output)+"\n" #Turn that into a proper line
+	if istimestatement(lastBracketedText,bracketed=True): #prepended four spaces, allows for reusing the old function (duration()) in the first case below
+		time, line = duration(time,lastBracketedText)
 	else:	#if a readable "(duration)" is still not found within the text block
 		if (TASKNUM<=TASK_LIM):
 			#line, time,dummy_dt = prompt4time(time)
 			line, time = ImprovedPrompt4time(time)
 		else:
 			line=""
-	if VERBOSE: print(line[:-1])
+	if VERBOSE: 
+		if line!="" : print(line[:-1])
 	output+=line
 	return (time, output)
 def conv2startTime(line):
