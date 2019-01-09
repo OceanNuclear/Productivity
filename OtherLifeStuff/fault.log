@@ -1,0 +1,68 @@
+'''record of what I've done'''
+sudo prime-select intel #2018-07-03 21:13:40
+2018-07-10 12:52:16 headphone audio is now fixed.
+2018-07-11 10:32:38 did the first ANSWER in https://ubuntuforums.org/showthread.php?t=2326395 in attempt to ensure bluetooth is off when I turn on the computer.
+2018-08-18 05:17:19 I have just changed all ~/*.sh script's top from #!/bin/sh to #!/bin/bash
+2018-09-11 08:39:50 used lmt-config-gui to turn on cpuhotplugging. Let's see what happens.
+2018-09-14 23:28:22 Loading up the latest Ubuntu version (.34) shows the "kernel Panic - not syncing: VFS: Unable to mount root fs on unknown-block" page.
+	Temporary Fix: load up the .33 version.
+	Attempt at fix: update in terminal while in the .33 version.
+		First attempt at doing so^: freeze at loading up version ... page instead of the "kernel panic" page.
+		Second attempt at doing so": same result as above^.
+	Attempt 2 at fix: downloaded /home/ocean/Downloads/linux-tools-4.15.0-34-generic_4.15.0-34.37_16.04.1_i386.deb, and installed it.
+		First attempt: Freeze at the blank, dark-purple page when booting from the first option in grub; but shows the "kernel panic" page when booting from the second option in grub (Advanced... ubuntu)
+	Attempt 3	: https://askubuntu.com/questions/41930/kernel-panic-not-syncing-vfs-unable-to-mount-root-fs-on-unknown-block0-0
+		First attempt: still does nothing.
+	Attempt 4	: Turned off cpu hotplugging in lmt.
+		First attempt: still shows the same screen. /home/ocean/Documents/UbuntuDebugging/DSC_0949.JPG
+		More in-depth reading of the error message in the above link leads me to believe that it is possibly another feat of Nvidia.
+		I will deal with this later, when I have time.
+		In the meantime, I'll boot up from Advanced -> 4.15.0-33-generic instead.
+	Attempt 5	: booted into 4.15.0-33-generic (recovery mode), chose the dpkg option, and it worked!!!!!
+	--fixed--
+2018-09-22 21:05:51 Usual case of going into airplane mode after boot-up (which according to past experience means my computer won't connect to wifi even after turning it off). So I shut down my laptop; but firmware update daemon was started after shutdown, and took ~1 minute to disappear.
+At random intervals:	ubuntu 18.04 airplane mode lock on random (turning off simply doesn't make any wifi symbol)
+		iwconfig:	lo	no wireless extensions.
+		no usable wireless interface	#Don't even know how to fix this one.
+2018-10-09 14:05:12 since yesterday, the laptop starts to disconnect from wifi stochastically even when wifi signal is strong. They come in bouts, but then seem to stop happening after a while.
+2018-10-16 22:24:15 since installation (and later uninstallation) of "Mouse and Touchpad" there is a large deformed bluetooth sign that shows up on the top right, showing bluetooth to be on after start-up.
+	Attempt 1: used the first solution here: https://askubuntu.com/questions/67758/how-can-i-deactivate-bluetooth-on-system-startup
+	Attempt 2: sudo gedit /etc/bluetooth/main.conf, noticed bottomline says "#... Defaults to 'false'.
+	AutoEnable=true" Therefore I turned Autoenable to False instead.
+	Attempt 3: In the same page in Attempt 1, re-did answer 1, did answer 3 and 6(blacklist bluetooth, blacklist btusb), done 8.3 (sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/blueman.desktop
+gnome-session-properties#where I disabled the start-up applet for bluetooth); planning to remove the effects of answer 1,3,6 after re-boot to confirm that 8.3 works.
+2018-10-17 06:41:03 bluetooth is now stuck at off position...
+	Attempt 1: deleted "blacklist bluetooth", "blacklistbtusb", "rfkill block bluetooth"
+	Fixed; but now it's default to ON again at startup...
+	Ah no it's fine. I simply checked too early, which didn't have enough time for the gnome-session-properties applet run to turn off bluetooth.
+2018-10-23 14:04:04 Wifi has been unstable in Uni.
+	Attempt 1: Tried to make wifi more stable by https://askubuntu.com/questions/912977/wifi-not-connecting-in-ubuntu-14-04-dual-boot
+	2018-10-23 18:36:46 boot up takes unusally long (stuck at loading screen "ubuntu ....." for ~2 minutes) after this fix. Perhaps it's not a coincidence.
+	2018-10-24 08:14:19 problem with long boot-up time persist
+	2018-10-24 14:06:49 but this is not consistent
+	2018-10-24 21:12:56 For the last two boot ups, this problem persist. Commented out the previous changes, problem seems fixed for now. (But my mouse is not connecting properly)
+	2018-10-25 12:14:02 Changed UOBwifi authentication to (WPA2Enterprise,Tunnelled TLS) while Eduroam stays the same (WPA&WPA2Enterprise,PEAP) wifi seesm stable now.
+	2018-10-25 14:15:47 problem still exist inside the 115A MSc study room
+	2018-10-27 01:56:40 Further diagnosis: when this problem crops up, the wifi sign is replaced with a "?"; but wavemon suggest it is still connected to the original wifi with no problem.
+	2018-10-30 12:18:39 at the guild: wavemon shows that the internet works, but chrome doesn't for a ~10 seconds within 10 seconds
+	2018-10-31 12:28:47 internet fairly unstable while I'm on campus wifi. At certain times speed drops to zero.
+	But sometimes when I'm in the Windows partition in the guild the internet speed is also unbearably slow. So maybe it has to do with crappy wifi hardware instead of a fixable software bug.
+	2018-11-13 13:27:17 It happened again; Top Right hand corner of the menu bar is showing "?" but wavemon shows that it works; fast.com shows it has ~13 Mbps connectivity. The only concern is that I don't want to use Evernote in low connectivity.
+2018-11-04 12:24:39 gedit does not display last few lines near EOF if file is longer than screen length (reproducible when window is maximized):
+	Attempt 1: sudo apt-get dist-update gedit# update was successful but doesn't fix the bug.
+	Possible alternative solution: minimize window, scroll to bottom of page, and maximize window again.
+		alternative solution2: swtich virtual desktop and switch back.
+2018-11-06 10:03:56 Ubuntu suddenly locks itself without propmpt/warning. (Battery at 100%; was connected to Eduroam, browsing a pdf, open programs: nautilus, Chrome, Evince); took around 8 seconds to wait for lock screen to load+ type in password; once unlocked all programs appeared closed; Chrome prompts if I want to re-open unexpected closed tabs.
+2018-11-29 15:42:44 trying to make the color scheme in Sublime-text 3 more bearable, i.e. more like gedit.
+	Attempt 1	Color for sublime-text 3 was #1D425D at line 513 of cobalt2.tmTheme file at /home/ocean/.config/sublime-text-3/Installed Packages; changed it to #001B33
+	Attempt 2	in the same file, line 25 #1f4662 was changed to #003B70 in attempt to change the line color.
+	Attempt 3	2018-11-29 16:11:13 after much searching it was determined that this file /home/ocean/.config/sublime-text-3/Packages/User/cobalt2/cobalt2.tmTheme is the correct one that controls the setting.s
+		Changed line 163 (variable background color) and line 17 (global background color) to #001b33; while lineHighlight background color (line 25) is changed to #003B70
+		Added "bold" into line 94 and 107 between the <string> brackets to make keywords and def bold.
+		Added "bold" fontStyle property into the support.function class as well so that "print" and "range" also gets embolden.
+2018-12-11 21:05:37 Mouse erratic scroll behaviour issue started to annoy me, so I cleaned the mouse wheel and it seems fine now.
+2018-12-13 16:10:13 Accidentally booted into tty4; came out of it by messing about using the escape key. At the moment of logging into the tty4, the top-left hand corner of the screen seems to have some defect.
+2019-01-02 14:33:47 Problem: 
+	Attempt 1	sudo gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf to add the block of code specified here: https://askubuntu.com/questions/745135/how-to-enable-indirect-glx-contexts-iglx-in-ubuntu-14-04-lts-with-nvidia-gfx
+	Attempt 2	Attempt 1 didn't work, so I deteled that code block from 50-ubuntu.conf and added a file 50-xserver-command.conf
+		Failed. "50-xserver-command.conf" removed, and bypassing issue by going on campus computer instead.

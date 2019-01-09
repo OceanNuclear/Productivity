@@ -112,6 +112,7 @@ alias backupScheduler="cp /home/ocean/Scheduler.py /home/ocean/Documents/GitHubD
 alias bas=bashrc
 alias updatebas="source ~/.bashrc"
 alias backupbas="cp /home/ocean/.bashrc /home/ocean/Documents/GitHubDir/Productivity/"
+alias backuplife="cp /home/ocean/Desktop/commands '/home/ocean/Desktop/List of mathematical symbols commonly used' /home/ocean/Desktop/Notepad /home/ocean/Documents/fault.log /home/ocean/Desktop/Schedule.txt /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/."
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.

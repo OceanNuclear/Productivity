@@ -1,0 +1,132 @@
+#Find out what key press is this:
+xev | grep -A2 --line-buffered '^KeyRelease' | sed -n '/keycode /s/^.*keycode \([0-9]*\).* (.*, \(.*\)).*$/\1 \2/p'
+
+from numpy import cos, arccos, sin, arctan, tan, pi, sqrt; from numpy import array as ary; import numpy as np; tau = 2*pi
+
+sudo powertop
+
+	#if all systme audio is fine but chrome is not playing any sound into the system:
+	killall pulseaudio	#pulse audio will autorespawn
+	#remove the config files.
+	rm -r ~/.config/pulse/*
+	rm -r ~/.pulse*
+
+for f in *; do
+	echo "$f"
+done
+
+for f in $a/*;do diff */${f#$a/} ; done	#find difference between files inside two neighbouring directories, $a and $b.
+#or use lsdiff
+for f in $(ls *.zip); do unzip $f; done
+for f in *.JPG; do convert $f -rotate 90 $f; done
+
+fg #to bring ^Z stopped jobs to the foreground; OR
+bg #to let those jobs keep running
+
+xbright +/-100
+
+grep -i Lauv 1-Sheepy.wpl
+
+pdftotext nameof.pdf -| wc -w #counts words in pdfs; "-" before "|" makes it output inside terminal instead.
+
+which python3 #to find path to program/application in terminal, e.g. program here being python3.
+
+|rev|lolcat
+cloc #Counts the number of lines in a code
+cat ~/.bash_history
+
+hostname -I #to discover my own IP address on each computer, #instead of doing an ssh/putty
+pscp desktopFile ocean@192.168.0.52:/home/ocean/Documents/FISPACT/FISPACT-II_disk2/	#done on my desktop, by firing up cmd
+
+Sublime Text:
+ctrl+m			#skip around inside paranthesis
+ctrl+q			#expand selection to quotes
+ctrl+l			#highlight current line
+ctrl+j			#bring next line up by removing newline character at the end of current line
+ctrl+shift+up/down	#to move lines up/down
+
+ctrl+K/ctrl+shift+K	#delete to EoL/start of line
+ctrl+shift+space	#highlight everything in bracket
+ctrl+enter		#insert and focus to new line below current line.
+ctrl+X			#cut line
+edit /home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings	#to install package, because it seems package control doesn't work.
+____________________________________________________________________________________________________________________________________________________________________________________________
+Network fixes:
+1.	nmclin
+2.	ifconfig wlp1s0 down
+	ifconfig wlp1s0 up
+	(try iwconfig instead?)
+3.	sudo service network-manager restart
+	(do I need a dash before it?)
+
+To check memory: 
+df -h
+dpkg-query -W -f='${Installed-Size;8}  ${Package}\n' | sort -n
+
+#To display WiFi signal strength in the terminal, you can run this command:
+watch -n 1 "awk 'NR==3 {print \"WiFi Signal Strength = \" (\$3/70)*100 \" %\"}''' /proc/net/wireless"
+#Or just use wavemon. You know that's much better.
+(For CCFE: WORLDnet-WiFi; CCFEguest)
+
+#Libre office:
+	to toggle capitalization(shift+F3 in word)
+	oowriter -pt pdf your_word_file.doc
+	#libreoffice --headless --invisible --convert-to pdf *.ppt	#doesn't work yet.
+#Nautilus Shortcut:
+	Ctrl+L highlights current directory location
+	Ctrl+Space -> F6 to select bookmarked location
+	F9 toggles sidepane(only if you REALLY have to)
+	#Alt+F2 -> restart unity and nautilus
+
+	
+To show running processes:
+ps aux/ top
+#or just use system monitor.
+
+uptime #to check up time
+last	--since 00:00 #to check all boot up time until the start of the day.
+Internet:
+pinging no longer works inside the Uni. 
+speedtest-cli is the preferred terminal app.
+
+Clearing out junk memory:
+sudo apt-get autoremove --purge
+sudo purge-old-kernels
+; or && can queue tasks to be ran in the future.
+
+git new repo:
+cd <repo>
+git init
+git add .
+git commit -m "<message>"
+git remote add origin git@github.com:OceanNuclear/<repo>.git
+	#if repository came from another guy's repo:
+	git remote add upstream git@github.com/<user>/<repo>
+	git pull upstream master
+git push origin master
+	#manually go to github UI to submit pull request; just a few buttons press.
+
+#to scp:
+scp <source> $PHYMAT4:/home/ADF/<dest>/.
+
+Learn from terminal:
+how-to-markdown,
+javascripting,
+	learnyounode,
+		how-to-npm,
+		(elementary-electron),
+	scope-chains-closures ?,
+	(stream-adventure),
+
+Python install module:
+#python -m pip install <library-name> 
+	#instead of pip install <library-name>
+now I use conda install
+
+when ssh-ing into my desktop:
+export PATH=/bin:usr/bin:$PATH #for using ls and scp commands
+ls !(o*)/*.png #list pngs in all directory except those whose dir name starts with o.
+
+Specs and stats:
+1.8GB RAM; 2.16x2 GHz; 22.6/28.6 GB used (~13 GB is actively used by me);
+chrome: shift+del #to remove url record
