@@ -71,7 +71,8 @@ watch -n 1 "awk 'NR==3 {print \"WiFi Signal Strength = \" (\$3/70)*100 \" %\"}''
 #Libre office:
 	to toggle capitalization(shift+F3 in word)
 	oowriter -pt pdf your_word_file.doc
-	#libreoffice --headless --invisible --convert-to pdf *.ppt	#doesn't work yet.
+	conv *.odt
+pdfunite *.pdf out.pdf	#for concatenating pdf
 #Nautilus Shortcut:
 	Ctrl+L highlights current directory location
 	Ctrl+Space -> F6 to select bookmarked location
@@ -79,7 +80,7 @@ watch -n 1 "awk 'NR==3 {print \"WiFi Signal Strength = \" (\$3/70)*100 \" %\"}''
 	#Alt+F2 -> restart unity and nautilus
 
 	
-To show running processes:
+#To show running processes:
 ps aux/ top
 #or just use system monitor.
 
@@ -89,10 +90,15 @@ Internet:
 pinging no longer works inside the Uni. 
 speedtest-cli is the preferred terminal app.
 
-Clearing out junk memory:
+#Clearing out junk memory:
 sudo apt-get autoremove --purge
 sudo purge-old-kernels
 ; or && can queue tasks to be ran in the future.
+
+#backup:
+backupScheduler
+backupbas
+backuplife #for commands, Schedule.txt, ListofMathematicalSymbols, Notepad, fault.log
 
 git new repo:
 cd <repo>
