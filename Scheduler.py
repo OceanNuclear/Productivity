@@ -17,22 +17,35 @@ def incrementTime(startTime, dt):#first part is the start time, second is dt
 	hour = int(total_mins/60)%24
 	#assert type(minutes)==int
 	return (hour, minutes)
+def grep(key,List):
+	TF = [ (key in a) for a in List ]
+	return bool(sum(TF))
+
 if len(args)>0:#would've put it at the start of the code if I could :(
-	if ("-q" in args) or ("--quiet" in args):
+	#Quiet flag
+	if grep("-q",args) or grep("--quiet",args):
+		#remove the -q flag
+		args = [ a for a in args if ((a!="-q") and (a!="--quiet"))]#and (arg!="=") and (arg!="-r") and (arg!="--rest-time")
+		args = [ a for a in args if a!="" ]
 		VERBOSE=False
-	#remove -q, -r, -num
-	args = [arg for arg in args if ((arg!="-q") and (arg!="--quiet"))]#and (arg!="=") and (arg!="-r") and (arg!="--rest-time")
-	args = [arg.replace("--rest-time","").replace("-r","") for arg in args]
-	args = [arg.replace("=","") for arg in args]
-	#Thinking about adding the option to edit the TASK_LIM with argv.
-	#if "-n" in args:
-	#	TASK_LIM=.
-	#	args = [arg for arg in args if ]
-	args = [int(arg) for arg in args if len(arg)!=0]#turn it into numbers
-	assert len(args)<=1
-	if len(args)==1:	#if there is still anything left, it must be the rest time.
-		rest_mins = args[0]
+	#clean all equal signs
+	args = [ a.replace("=","") for a in args ]
+	args = [ a for a in args if a!="" ]#remove all of the empty string elements
+	#Add-rest-time flag 
+	if grep("-r",args) or grep("--rest-time",args):
+		ind = [ n for n in range(len(args)) if ("-r" in args[n]) ]
+		assert len(ind)==1, "Make sure that there is one -r flag"
+		#remove the -r flag
+		args = [ a.replace("--rest-time","").replace("-r","") for a in args ]
+		args = [ a for a in args if a!="" ]#remove all of the empty string elements
+		rest_mins = int(args[ind[0]])
 		current_time = incrementTime(current_time,(0,rest_mins))
+	if grep ("-n", args) or grep("-l", args):
+		ind = [ n for n in range(len(args))  if ("-n" in args[n]) or ("-l" in args[n]) or ("--task-lim" in args[n]) ]
+		assert len(ind)==1, "you can use '-n', '--num', '-l', '--lim', '--limit', '--task-lim' or '--task-limit' to declare the TASK_LIM variable"
+		args = [ a.replace("--num","").replace("-n","").replace("--task-limit","").replace("--task-lim","").replace("--limit","").replace("--lim","").replace("-l","") for a in args]
+		args = [a for a in args if a!=""]
+		TASK_LIM= int(args[ind[0]])
 
 def indentLvL(line):
 	#if not line.startswith(" "): return 0
