@@ -1,24 +1,53 @@
 Fortnightly music day!
 Nightly review of your knowledge!
 Plan, to start. Break task into recursively smaller to-do list.
-[x]Extracted FWHM readings
-[]Scan plumbing insurance for Keith (15 mins)
-[]LabBook3: (laptop) Extract counts readings (40 mins)
+Monday:
+[x]Dig up the compiled list of scholarships available for PhD -> Ubuntu /11.PhDApplication/ (10 mins)
+[x]Add file dividends (5 mins)
+[x]Bring glasses cloth + more Folders (5 mins)
+2019-01-15 morning: 75cm, 69.2kg
+[x]Chr2 revision (1 hour)
+[x]Fill in most of the application (20 mins)
+[x]Scan Certificate (5 mins)
+Tuesday:
+[x]Borrow Fundamentals of radiation materials science : metals and alloys (TA418.6 .W37) + book requested from research reserve
+[x]Put away everything(i.e. lab book printed stuff+ certificates) EXCEPT sign up sheet (2 mins)
+[x]Send off application after adding work experience (10 mins)
+[]Skim through other scholarship deadlines (20 mins)
+[]Download past paper posted on canvas -> past paper folder for Rxr Mat (10 mins)
+[]DAVID'S PAPER (30 mins)
 []LabBook3: Match the sources used (30 mins)
-[]LabBook3: Plot resolution (Python) (1 hour)
-[]LabBook3: Plot Efficiency
+Thursday:
+[]Application for the second ITER internship
+Wednesday:
+[]Update module checklist (10 mins)
+    8:43pm 10 mins
+[]Parkour booking time change (30 mins)
+    9:13pm 30 mins
+[]Buy Accordion file+cementine (15 mins) 
+    9:28pm 15 mins
+[]LabBook2,3: Plot Resolution (Python) (1 hour)
+    10:28pm 1 hour
+[]LabBook3: Plot Efficiency + fit (50 mins)
+    11:18pm 50 mins
+Friday:
 []Skim TOKAMAKs list for PhD (30 mins)
-[]Check ITER application: send it off anyways? (30 mins)
+    11:48pm 30 mins
+[]Install Tor (30 mins)
+    12:18am 30 mins
+[]Configure Tor (10 mins)
+    12:28am 10 mins
 Winter:
 []Write presentation for Fusion
 []David: paper -> preprints.org
 []Fusor
 []Lab book2: -> fit -> write conclusion
 []Lab book3: write up intro
-[]Write essay on What I know about W irradiation
+[]Dress stylishly
 []Num Ana
 1.why are you doing this?
     Because I want to be better than every other student, in terms of understanding fusion material science.
 2.Lower the difficulty of getting into the task by setting up the appropriate software/procedure
     Much of the time it takes to finish a task is taken up by the preparation and planning.
     if you have the to-do list(+ reason for each to do) + app to let you pick up where you left off, then you can easily switch task without losing track/losing sight of purpose
+

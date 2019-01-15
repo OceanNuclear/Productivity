@@ -72,7 +72,8 @@ watch -n 1 "awk 'NR==3 {print \"WiFi Signal Strength = \" (\$3/70)*100 \" %\"}''
 	to toggle capitalization(shift+F3 in word)
 	oowriter -pt pdf your_word_file.doc
 	conv *.odt
-pdfunite *.pdf out.pdf	#for concatenating pdf
+convq *odt #for conversion while ignoring the error messages.
+pdfunite *.pdf out.pdf	#for concatenating pdf (merge pdf)
 #Nautilus Shortcut:
 	Ctrl+L highlights current directory location
 	Ctrl+Space -> F6 to select bookmarked location
@@ -103,9 +104,9 @@ backuplife #for commands, Schedule.txt, ListofMathematicalSymbols, Notepad, faul
 git new repo:
 cd <repo>
 git init
+git remote add origin git@github.com:OceanNuclear/<repo>.git
 git add .
 git commit -m "<message>"
-git remote add origin git@github.com:OceanNuclear/<repo>.git
 	#if repository came from another guy's repo:
 	git remote add upstream git@github.com/<user>/<repo>
 	git pull upstream master
@@ -115,7 +116,10 @@ git push origin master
 #to scp:
 scp <source> $PHYMAT4:/home/ADF/<dest>/.
 
-Learn from terminal:
+#terminal shortcut keys:
+werase = ^W #ctrl-backspace
+Ctrl + _ #Need to hold shift #is basically ctrl+z in terminal
+#Learn from terminal:
 how-to-markdown,
 javascripting,
 	learnyounode,
