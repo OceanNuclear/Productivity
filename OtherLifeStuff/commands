@@ -91,6 +91,11 @@ Internet:
 pinging no longer works inside the Uni. 
 speedtest-cli is the preferred terminal app.
 
+look	#look up an English word without having to check the dictionary!
+factor	#factorize any integers
+!!	#re-run last command
+^foo^bar	#replace the last command's "foo" with "bar" and then re-run.
+
 #Clearing out junk memory:
 sudo apt-get autoremove --purge
 sudo purge-old-kernels

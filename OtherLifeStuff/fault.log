@@ -21,9 +21,11 @@ sudo prime-select intel #2018-07-03 21:13:40
 	Attempt 5	: booted into 4.15.0-33-generic (recovery mode), chose the dpkg option, and it worked!!!!!
 	--fixed--
 2018-09-22 21:05:51 Usual case of going into airplane mode after boot-up (which according to past experience means my computer won't connect to wifi even after turning it off). So I shut down my laptop; but firmware update daemon was started after shutdown, and took ~1 minute to disappear.
+	Insight 1: 2019-01-18 01:51:45 The usual green/white shutdown text were printted; this time the bottom line stuck at "Stopped jobs by snappy Daemon %d s/1 min 30s" &<number of seconds since the shutdown button was pressed> for 30 seconds, and then the line stopped counting down and scrolled out of sight. Therefore, I postulate that the amount of total waiting time required maybe 1.5 minutes *N where N<=4; since I assume there are a maximum of 4 of such processes; each of them silently counting down. ∴ I should wait for 6 more minutes before force-shutting down the laptop if it's stuck on the green/white text (scrolling) text screen. 
 At random intervals:	ubuntu 18.04 airplane mode lock on random (turning off simply doesn't make any wifi symbol)
 		iwconfig:	lo	no wireless extensions.
 		no usable wireless interface	#Don't even know how to fix this one.
+		Work-around: since this problem turns out to only occur after "shutting down Windows -> start up Ubuntu" series of events, I can simply reboot the Ubuntu and this problem will be fixed.
 2018-10-09 14:05:12 since yesterday, the laptop starts to disconnect from wifi stochastically even when wifi signal is strong. They come in bouts, but then seem to stop happening after a while.
 2018-10-16 22:24:15 since installation (and later uninstallation) of "Mouse and Touchpad" there is a large deformed bluetooth sign that shows up on the top right, showing bluetooth to be on after start-up.
 	Attempt 1: used the first solution here: https://askubuntu.com/questions/67758/how-can-i-deactivate-bluetooth-on-system-startup

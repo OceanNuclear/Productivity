@@ -1,45 +1,50 @@
 Fortnightly music day!
 Nightly review of your knowledge!
 Plan, to start. Break task into recursively smaller to-do list.
-Monday:
-[x]Dig up the compiled list of scholarships available for PhD -> Ubuntu /11.PhDApplication/ (10 mins)
-[x]Add file dividends (5 mins)
-[x]Bring glasses cloth + more Folders (5 mins)
-2019-01-15 morning: 75cm, 69.2kg
-[x]Chr2 revision (1 hour)
-[x]Fill in most of the application (20 mins)
-[x]Scan Certificate (5 mins)
-Tuesday:
-[x]Borrow Fundamentals of radiation materials science : metals and alloys (TA418.6 .W37) + book requested from research reserve
-[x]Put away everything(i.e. lab book printed stuff+ certificates) EXCEPT sign up sheet (2 mins)
-[x]Send off application after adding work experience (10 mins)
-[]Skim through other scholarship deadlines (20 mins)
-[]Download past paper posted on canvas -> past paper folder for Rxr Mat (10 mins)
-[]DAVID'S PAPER (30 mins)
-[]LabBook3: Match the sources used (30 mins)
 Thursday:
-[]Application for the second ITER internship
-Wednesday:
+[x]respond to Xiao Wei and Guild (15 mins)
+[x]Add nuclear charts onto presentation
+[]Application for the 2nd ITER internship (30 mins)
+    8:52am 30 mins
+[]LabBook3: Enter source activity+uncertainty at Wk1, confirm the geometry=const.dist.(20 mins)
+    9:12am 20 mins
+[]Find where stuff were stored for Parkour Society (if can't find, make new ones) (10 mins)
+    9:22am 10 mins
 []Update module checklist (10 mins)
-    8:43pm 10 mins
-[]Parkour booking time change (30 mins)
-    9:13pm 30 mins
-[]Buy Accordion file+cementine (15 mins) 
-    9:28pm 15 mins
-[]LabBook2,3: Plot Resolution (Python) (1 hour)
-    10:28pm 1 hour
-[]LabBook3: Plot Efficiency + fit (50 mins)
-    11:18pm 50 mins
+    9:32am 10 mins
 Friday:
-[]Skim TOKAMAKs list for PhD (30 mins)
-    11:48pm 30 mins
+9:30
+[]draw money to return to Tich (5 mins)
+    9:35am 5 mins
+[]Parkour booking time change (10 mins)
+    9:45am 10 mins
+[]Bring business card (5 mins)
+    9:50am 5 mins
+[]Announce Collab with Ninjutsu society (10 mins)
+    10:00am 10 mins
+[]Bring the new, thin erasible pen (5 mins)
+    10:05am 5 mins
+[]Return £10 to TIch (5 mins)
+    10:10am 5 mins
+[]Skim TOKAMAKs list for PhD (USA, Australia, Canada?) (30 mins)
+    10:40am 30 mins
 []Install Tor (30 mins)
-    12:18am 30 mins
+    11:10am 30 mins
 []Configure Tor (10 mins)
-    12:28am 10 mins
+    11:20am 10 mins
+Saturday:
+[]Rxr Mat.: Do PP (0.8 hours)
+    12:08pm 0.8 hours
+[]Training on campus with Zoe, Russell (3.75 hours)
+    3:53pm 3.75 hours
+[]LabBook2,3: Plot Resolution (Python) (1 hour)
+    4:53pm 1 hour
+[]LabBook3: Plot Efficiency + fit (50 mins)
+    5:43pm 50 mins
+[]Update USB content
 Winter:
-[]Write presentation for Fusion
 []David: paper -> preprints.org
+[]Application for PhD
 []Fusor
 []Lab book2: -> fit -> write conclusion
 []Lab book3: write up intro
