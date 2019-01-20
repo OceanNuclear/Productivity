@@ -1,49 +1,60 @@
 Fortnightly music day!
 Nightly review of your knowledge!
 Plan, to start. Break task into recursively smaller to-do list.
-Thursday:
-[x]respond to Xiao Wei and Guild (15 mins)
-[x]Add nuclear charts onto presentation
-[]Application for the 2nd ITER internship (30 mins)
-    8:52am 30 mins
-[]LabBook3: Enter source activity+uncertainty at Wk1, confirm the geometry=const.dist.(20 mins)
-    9:12am 20 mins
-[]Find where stuff were stored for Parkour Society (if can't find, make new ones) (10 mins)
-    9:22am 10 mins
-[]Update module checklist (10 mins)
-    9:32am 10 mins
-Friday:
-9:30
-[]draw money to return to Tich (5 mins)
-    9:35am 5 mins
-[]Parkour booking time change (10 mins)
-    9:45am 10 mins
-[]Bring business card (5 mins)
-    9:50am 5 mins
-[]Announce Collab with Ninjutsu society (10 mins)
-    10:00am 10 mins
-[]Bring the new, thin erasible pen (5 mins)
-    10:05am 5 mins
-[]Return £10 to TIch (5 mins)
-    10:10am 5 mins
-[]Skim TOKAMAKs list for PhD (USA, Australia, Canada?) (30 mins)
-    10:40am 30 mins
-[]Install Tor (30 mins)
-    11:10am 30 mins
-[]Configure Tor (10 mins)
-    11:20am 10 mins
+Done Friday:
+[x]Answer Tinder
+[x]LabBook 4 (did some)
+[x]Answer Emily
+[x]Parkour booking time add (10 mins)
 Saturday:
+[x]Power lifting (1 hour)
+[x]Weight lifting (2 hours)
+[x]Parkour (2 hours)
+Sunday:
+[x]House viewing completed
+3pm
+[]Announce Collab with Ninjutsu society (10 mins)
+    3:10pm 10 mins
+[]LabBook4 Intro (1 hour)
+    4:10pm 1 hour
 []Rxr Mat.: Do PP (0.8 hours)
-    12:08pm 0.8 hours
-[]Training on campus with Zoe, Russell (3.75 hours)
-    3:53pm 3.75 hours
-[]LabBook2,3: Plot Resolution (Python) (1 hour)
-    4:53pm 1 hour
+    4:58pm 0.8 hours
+[]Aut 11 revision (0.5 hour)
+    5:28pm 0.5 hour
+[]Aut 3 PP (1.5 hours)
+    6:58pm 1.5 hours
+[]Make new Parkour Society posters (Soc name (2 pages),"Ask us why we're giving out tic-tacs" ->ToBePrinted) (10 mins)
+    7:08pm 10 mins
+[]Progress review form (20 mins)
+    7:28pm 20 mins
+[]Pick some Parkour photos to be printed (30 mins)
+    7:58pm 30 mins
+[]Update module checklist (10 mins)
+    8:08pm 10 mins
+[]LabBook3: Enter source activity+uncertainty at Wk1, confirm the geometry=const.dist.(20 mins)
+    8:28pm 20 mins
+[]Skim TOKAMAKs list for PhD (USA, Australia, Canada?) (30 mins)
+    8:58pm 30 mins
+[]Install Tor (10 mins)
+    9:08pm 10 mins
+[]Configure Tor (30 mins)
+    9:38pm 30 mins
+[]LabBook2,3: Plot Resolution (Python)(1 hour)
+    10:38pm 1 hour
 []LabBook3: Plot Efficiency + fit (50 mins)
-    5:43pm 50 mins
+    11:28pm 50 mins
+[]Fix terminal grave key (50 mins)
+    12:18am 50 mins
+[]DAVID'S PAPER (30 mins)
+    12:48am 30 mins
+[]Send off ITER application (already ready to fire) (assume that you can't finish publishing the paper on time) (10 mins)
+    12:58am 10 mins
+Monday:
 []Update USB content
-Winter:
+[]Print Parkour Soc posters+ FORTRAN  (20 mins)
+    1:18am 20 mins
 []David: paper -> preprints.org
+Later:
 []Application for PhD
 []Fusor
 []Lab book2: -> fit -> write conclusion

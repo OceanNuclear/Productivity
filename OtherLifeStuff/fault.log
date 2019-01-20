@@ -68,3 +68,25 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 	Attempt 1	sudo gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf to add the block of code specified here: https://askubuntu.com/questions/745135/how-to-enable-indirect-glx-contexts-iglx-in-ubuntu-14-04-lts-with-nvidia-gfx
 	Attempt 2	Attempt 1 didn't work, so I deteled that code block from 50-ubuntu.conf and added a file 50-xserver-command.conf
 		Failed. "50-xserver-command.conf" removed, and bypassing issue by going on campus computer instead.
+2019-01-20 02:27:33 (After 2 days of painstaking debugging) the login loop problem has been solved. This is because I didn't update the Workspace Grid generously provided and maintained by Zakkak, so the outdated software broke under the new updates.
+	I did a bunch of nvidia update in the process thinking that was the problem; but I guess that's a bit fucked.
+	Fixed: by "dconf write /org/gnome/shell/disable-user-extensions", coming onto that, and turn back on Chrome's gnome extension auto update of Workspace Grid.
+2019-01-20 morning  remaining config issues
+	1. Ctrl+Alt+T won't work despite it being very obviously listed
+	2. Alt-Tab won't work
+	3. USB mouse won't work
+	4. Timestamp custom shortcut doesn't work
+	5. No animation upon switiching workspaces/any gnome-desktop actions.
+	Attempt 1:Reboot
+		Seems to fix the Ctrl+Alt+T and ctrl+/ shortcut; but Alt+Tab still remains
+	AttempT 2: Issue 5 was fixed by logging in Ubuntu Wayland instead of other versions! Consider it fixed now. Seems to have fixed the custom shortcut issues too.
+	Attempt 3: Issue 2 was resolved simply by changing the keyboard shotcut for "Switch windows directly" to Alt+Tab
+	Attempt 4: Wireless mouse problem diagnosed as hardware problem.
+	All config problems solved.
+2019-01-20 09:26:06 some problems remain:
+	After the initial start-up , the following problems crop up:
+	1. Touchpad doesn't work
+	2. gravekey wasn't change (crops up AFTER the initial post-start-up probation period)
+	Issue 1 got resolved automatically after the initial post-start-up probation period ended/after typing "xinput; less /proc/bus/input/devices" into terminal (I don't know what triggered the probation period's end)
+	I think this is because I unplugged my USB, so "@reboot /home/ocean/backslash.sh" in crontab changed the wrong USB device (NB the touchpad is connected to the laptop via internal USB.)
+	Attempt 1: plugged in USB and rebooted: confirmed 1 was caused by unpluggin USB. Also 2 (grave key issue) apparently also exist in terminal BEFORE the thing.
