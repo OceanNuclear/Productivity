@@ -91,6 +91,16 @@ Internet:
 pinging no longer works inside the Uni. 
 speedtest-cli is the preferred terminal app.
 
+#Alternative to opening in terminal
+tee somefile.txt <<EOF
+line
+line
+EOF
+#Directly create file inside terminal (HERE documents syntax)
+less filename#scrollable
+more filename#print to stdout
+cat filename#very similar to more
+
 look	#look up an English word without having to check the dictionary!
 factor	#factorize any integers
 !!	#re-run last command

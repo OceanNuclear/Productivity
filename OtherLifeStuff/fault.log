@@ -90,3 +90,13 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 	Issue 1 got resolved automatically after the initial post-start-up probation period ended/after typing "xinput; less /proc/bus/input/devices" into terminal (I don't know what triggered the probation period's end)
 	I think this is because I unplugged my USB, so "@reboot /home/ocean/backslash.sh" in crontab changed the wrong USB device (NB the touchpad is connected to the laptop via internal USB.)
 	Attempt 1: plugged in USB and rebooted: confirmed 1 was caused by unpluggin USB. Also 2 (grave key issue) apparently also exist in terminal BEFORE the thing.
+	Attempt 2: the shift+F8 shortcut does it's job of calling the xmodmap script; but the xmodmap script doesn't work in some gtk applications (e.g. terminal, gedit.) So instead I'm editing my /usr/share/X11/xkb/symbols/* files. Replacing the first instance (line 80) of <TLDE> to "backslash, bar" in us doesn't work.
+	Attempt 3: edited /usr/share/X11/xkb/symbols/gb instead, replacing every keyboard layout's <TLDE> key to use backslash bar instead. (And I forogt to save a backup for the original)
+	Successful, even after reboot with all of the change grave key application turned off at startup.
+	Attempt 4: Planning to map brokenbar, EuroSign, accented e, double dotted i, norwegian o, onto the keyboard using Alt-Gr in xmodmap.
+		Apparently AltGr+4=>EuroSign, AltGr+=>oslash,  already works in non-GTK applications
+		Also successfully mapped everything using backslash.sh
+2019-01-21 06:13:27 Attempting to add shortcuts for gedit
+	Attempt 1: Tried changing the dconf and editing ~/.config/gedit/accels as stated here: https://askubuntu.com/questions/223986/custom-keyboard-shortcuts-in-gedit but no luck.
+2019-01-21 10:03:23 Sudden blackscreen->(Some error messages about power management)->login screen; perhaps its due to my hasty shutdown this morning.
+2019-01-22 01:50:40 Modified everything in powertop's Tunables page to be "good"

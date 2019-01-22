@@ -112,7 +112,7 @@ alias backupScheduler="cp /home/ocean/Scheduler.py /home/ocean/Documents/GitHubD
 alias bas=bashrc
 alias updatebas="source ~/.bashrc"
 alias backupbas="cp /home/ocean/.bashrc /home/ocean/Documents/GitHubDir/Productivity/"
-alias backuplife="cp /home/ocean/Desktop/commands '/home/ocean/Desktop/List of mathematical symbols commonly used' /home/ocean/Desktop/Notepad /home/ocean/Documents/fault.log /home/ocean/Desktop/Schedule.txt /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/."
+alias backuplife="cp /home/ocean/Desktop/commands '/home/ocean/Desktop/List of mathematical symbols commonly used' /home/ocean/Desktop/Notepad /home/ocean/Documents/fault.log /home/ocean/Desktop/Schedule.txt /home/ocean/*.sh /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/."
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -144,7 +144,7 @@ export PHYMAT4="HYW543@phymat4.adf.bham.ac.uk"
 export PHYMAT6="HYW543@phymat6.adf.bham.ac.uk"
 export CHI=$CHETHOR
 alias  phymat="sshy -p 22722 $PHYMAT4"
-
+alias  scpp="scp -P 22722"
 #Fortran compile and run command:
 function fortify(){
 	gfortran $1.f -o $1.out
@@ -180,6 +180,10 @@ function bibcompile(){ #Don't type the .tex after it.
 }
 function silentlat(){
 	pdflatex $1.tex > /dev/null
+}
+function convq(){
+	conv "$@" 2> /dev/null
+	 #redirect error into null, so they don't get printed
 }
 function gitinit(){
 	cd $1
