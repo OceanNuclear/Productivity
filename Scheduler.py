@@ -209,6 +209,10 @@ def conv2startTime(line):
 	thres =11 #Threshold number of alphabets to cause the line ot be recognized as not a time statement
 	#if it is not a start time statement just return None
 	line = line[:-1]#remove the newline character
+	if line=="current_time" or line=="now": #special feature to allow readjustment of start time
+		TIME_DECLARED=True
+		time=(datetime.datetime.now().hour,datetime.datetime.now().minute)
+		return time
 	NotATimeStatement = (not indentLvL(line)==0) or line.startswith("[") or sum([l.isalpha() for l in line ])>thres or line.endswith(":") or line.endswith(": ")
 	if NotATimeStatement:
 		return None
