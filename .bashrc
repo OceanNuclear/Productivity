@@ -113,7 +113,9 @@ alias bas=bashrc
 alias updatebas="source ~/.bashrc"
 alias backupbas="cp /home/ocean/.bashrc /home/ocean/Documents/GitHubDir/Productivity/"
 alias backuplife="cp /home/ocean/Desktop/commands '/home/ocean/Desktop/List of mathematical symbols commonly used' /home/ocean/Desktop/Notepad /home/ocean/Documents/fault.log /home/ocean/Desktop/Schedule.txt /home/ocean/*.sh /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/."
+#alias tor=/usr/bin/tor-browser_en-US/start-tor-browser.desktop
 # Alias definitions.
+alias xopen=xdg-open
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
