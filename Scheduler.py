@@ -84,7 +84,7 @@ def istimestatement(line,bracketed=False):	#is a statement that declares the dur
 	if line[5]==".":
 		if not bracketed:
 			return False
-	if line[4].isdigit() and (('am' in line) or ("pm" in line) or (":" in line) or ("in" in line) or ("our" in line)):#account for 24 hour expression, 12 hours expression, and duration expression
+	if line[4].isdigit() and (('am' in line) or ("pm" in line) or (":" in line) or ("in" in line) or ("our" in line) or ('hr' in line)):#account for 24 hour expression, 12 hours expression, and duration expression
 		return True#first non-space character is a digit.
 	else:
 		return False
