@@ -113,6 +113,8 @@ alias bas=bashrc
 alias updatebas="source ~/.bashrc"
 alias backupbas="cp /home/ocean/.bashrc /home/ocean/Documents/GitHubDir/Productivity/"
 alias backuplife="cp /home/ocean/Desktop/commands '/home/ocean/Desktop/List of mathematical symbols commonly used' /home/ocean/Desktop/Notepad /home/ocean/Documents/fault.log /home/ocean/Desktop/Schedule.txt /home/ocean/*.sh /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/."
+alias p="echo 'from numpy import cos, arccos, sin, arctan, tan, pi, sqrt; from numpy import array as ary; import numpy as np; tau = 2*pi
+from matplotlib import pyplot as plt'"
 #alias tor=/usr/bin/tor-browser_en-US/start-tor-browser.desktop
 # Alias definitions.
 alias xopen=xdg-open
