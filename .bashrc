@@ -197,14 +197,5 @@ function gitinit(){
 	git remote add origin git@github.com:OceanNuclear/$1.git
 	git push origin master
 }
-function gittempinit(){
-	cd $1
-	git init
-	git add .
-	gitcom "First commit - for splitting my repositories"
-	git remote add origin git@github.com:OceanNuclear/$1.git
-	git push origin master
-	cd ..
-}
 #perhaps I have to export the following package list before installation will happen properly?
 #export PKG_CONFIG_PATH=/usr/lib/pkgconfig
