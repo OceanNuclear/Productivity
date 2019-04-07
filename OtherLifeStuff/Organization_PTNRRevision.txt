@@ -1,0 +1,61 @@
+I: Glaring problems to fix first
+	1-Nuclear-Instrumentation,Multiplying-Media,Radiation-Dosimetry-and-Protection-PastPaper/
+- Nuclear electronics: I don't actually know how does each electronic do what they do in detail: read Knoll?
+- Particle detectors: X ray detectors: I'm not familiar with them!
+- Radiation Protection: Dave gave me a low score on protection and I don't know why?
+	4-General-Nuclear-Power-Technology-PastPaper/
+- Attempt a few essay question (type on laptop)
+- Attempt a few Financial appraisal questions (type on laptop)
+__
+II: List of things to revise for:
+	1-Nuclear-Instrumentation,Multiplying-Media,Radiation-Dosimetry-and-Protection-PastPaper/
+- Particle detectors: make a list for a)each radiation type b) design (semiconductor, p-n junction, avalanche, etc.); Beta-Bloch all terms definitions
+	-operational principle
+	-Efficiency and resolution dependence/response on materials/design
+- List all components of the nuclear electronics -> write the characteristics of each component; define "TTL/NIM/ECL"
+- (Rad pro, Rad Dosim, and Rad Shield are all compiled; but add the definition page again
+
+	4-General-Nuclear-Power-Technology-PastPaper/
+- Enviro: Make a list of things to write down
+- Rxr Mat: Make a mind-map for reactor materials, with the following hierarchy a) type b)irradiation damage response c) application and problems;
+- Rxr Mat: Make a list for a)irradiation defect type (prismatic loop, vacancy precipitation, bubble, edge dislocation, stacking fault, etc), its energy calculation, and its eventual fate.
+- Rxr Mat: Make pretty drawings 💕️💖️
+- Decom: Just use your template revision list .odt to organize concepts
+	- specifically, define "main categories of radioactive waste (HLW, ILW, LLW, VLLW)" + give 2 examples each.
+- Fin Appr: Just use your template revision list .odt to organize concepts
+
+	3-Reactor-Materials,Reactor-Systems-and-NDE-PastPaper/
+- Rxr Contr: List the five/six mathematical methods for finding instabilities
+- Fuel cycle: List complete process, from digging out of the ground to decomissioning the fuel.
+- Fuel Chemistry: List complete process of modelling, starting from the to its application
+- NDE: add extra detail in the ultrasonic technique on top of last year's revision list, + write more reference to the revision lecture slides.
+- Material Science: Just use your revision list .odt template; "draw diagram to define Burgers vector of a dislocation"; define "conservative and non-conservative motion"
+- Rxr Sys: Draw all reactor using "Lamarsh"; "The Elements of Nuclear Power - Bennet & Thomson"; "Nuclear Reactors - Nero"
+	- Vertical cross section + boilers (+ refuelling crane system if any),
+	- Horizontal cross section across the core
+	- Steam separator + dryer
+	- CVCS system if any
+	- define "risk", "Tolerability of Risk diagram", "function of the ONR"
+	2-Radiation-Transport,Thermal-Hydraulics-and-Reactor-Engineering-PastPaper/
+- Fusion: list: 1. Tritium breeding blanket all concepts, 2. All detector types; list all other possible alternative reactions and their properties (cross sections, Q value, etc.)
+- Rad trans: list definitions of (D, B_i, Sigma_i).
+	- Replicate the whole transport equation from the most general form to neutron diffusion equation form, noting important milestones; define the name (i.e. give definition) of each term
+	- Show that the probability distribution of energy loss is rectangular.
+	- Get the average lethargy expresssion (show derivation)
+- Rxr Phys: Use the Revision list .odt file, make very pretty looking _M_ and _F_ matrices; explaing how to get them; define "collision density F(E)", "worth/differential of an absorber", "neutron transport cross-section", "diffusion length", "lethargy u(E)", ""
+- Stats:
+	- List all major distributions mentionsed + all approximations to get to Gaussian
+	- Covariance matrix equation derivation for lin-gress
+	- How to use the T-test or z-test, and the difference between them
+- Thm: Compile all equations and relations from notes; define all terms in Fourier Transport equation, "quality x, void fraction α and slip ratio S", "Nu", "Pr", "the other two dimensionless numbers"
+- Rxr Kin: Memorize the form of the L^-1{n(t)} expression (using your mnemonics tricks etc.) + revision checklist .odt ; define "k_eff", "cumulative/independent/chain yield"
+__
+Entertainment: (Relearn Lagrangian by taking a course + use old notes)
+Entertainment: (Read about back-propagation algorithms )
+Entertainment: (Learn Green's function by taking a course)
+
+	How to make consolidate it further:
+-	Write code
+-	Teach other people by writing a code /book on it
+-	Write a report on it
+-	Attach pictures of the relevant ore onto the a scrap book
