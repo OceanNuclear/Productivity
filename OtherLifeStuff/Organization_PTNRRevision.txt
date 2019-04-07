@@ -1,4 +1,4 @@
-I: Glaring problems to fix first
+						I: Glaring problems to fix first
 	1-Nuclear-Instrumentation,Multiplying-Media,Radiation-Dosimetry-and-Protection-PastPaper/
 - Nuclear electronics: I don't actually know how does each electronic do what they do in detail: read Knoll?
 - Particle detectors: X ray detectors: I'm not familiar with them!
@@ -7,13 +7,16 @@ I: Glaring problems to fix first
 - Attempt a few essay question (type on laptop)
 - Attempt a few Financial appraisal questions (type on laptop)
 __
-II: List of things to revise for:
+						II: List of things to revise for:
 	1-Nuclear-Instrumentation,Multiplying-Media,Radiation-Dosimetry-and-Protection-PastPaper/
 - Particle detectors: make a list for a)each radiation type b) design (semiconductor, p-n junction, avalanche, etc.); Beta-Bloch all terms definitions
-	-operational principle
-	-Efficiency and resolution dependence/response on materials/design
+	- operational principle
+	- Efficiency and resolution dependence/response on materials/design
+	- CT corrections
 - List all components of the nuclear electronics -> write the characteristics of each component; define "TTL/NIM/ECL"
+	- CT corrections
 - (Rad pro, Rad Dosim, and Rad Shield are all compiled; but add the definition page again
+	- CT: Rad pro: "why do KERMA vs fluence curves don't match up", "mass attenuation coefficient definition"
 
 	4-General-Nuclear-Power-Technology-PastPaper/
 - Enviro: Make a list of things to write down
@@ -36,9 +39,10 @@ II: List of things to revise for:
 	- Steam separator + dryer
 	- CVCS system if any
 	- define "risk", "Tolerability of Risk diagram", "function of the ONR"
+
 	2-Radiation-Transport,Thermal-Hydraulics-and-Reactor-Engineering-PastPaper/
 - Fusion: list: 1. Tritium breeding blanket all concepts, 2. All detector types; list all other possible alternative reactions and their properties (cross sections, Q value, etc.)
-- Rad trans: list definitions of (D, B_i, Sigma_i).
+- Rad trans: list definitions of (D, B_i, Sigma_i); list assumptions for transport equation (from Lamarsh?); remember the important step of integrating overa ll dir.s
 	- Replicate the whole transport equation from the most general form to neutron diffusion equation form, noting important milestones; define the name (i.e. give definition) of each term
 	- Show that the probability distribution of energy loss is rectangular.
 	- Get the average lethargy expresssion (show derivation)
@@ -48,7 +52,7 @@ II: List of things to revise for:
 	- Covariance matrix equation derivation for lin-gress
 	- How to use the T-test or z-test, and the difference between them
 - Thm: Compile all equations and relations from notes; define all terms in Fourier Transport equation, "quality x, void fraction α and slip ratio S", "Nu", "Pr", "the other two dimensionless numbers"
-- Rxr Kin: Memorize the form of the L^-1{n(t)} expression (using your mnemonics tricks etc.) + revision checklist .odt ; define "k_eff", "cumulative/independent/chain yield"
+- Rxr Kin: Memorize the form of the L^-1{n(t)} expression (using your mnemonics tricks etc.) + revision checklist .odt ; define "k_eff", "cumulative/independent/chain yield"; shape of the chain yield curve wrt. increasing energy and atomic mass of fissile isotope; σ_f(E) for U
 __
 Entertainment: (Relearn Lagrangian by taking a course + use old notes)
 Entertainment: (Read about back-propagation algorithms )
@@ -58,4 +62,4 @@ Entertainment: (Learn Green's function by taking a course)
 -	Write code
 -	Teach other people by writing a code /book on it
 -	Write a report on it
--	Attach pictures of the relevant ore onto the a scrap book
+-	Attach pictures of the relevant ore onto the a scrap book?
