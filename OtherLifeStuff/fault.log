@@ -26,6 +26,7 @@ At random intervals:	ubuntu 18.04 airplane mode lock on random (turning off simp
 		iwconfig:	lo	no wireless extensions.
 		no usable wireless interface	#Don't even know how to fix this one.
 		Work-around: since this problem turns out to only occur after "shutting down Windows -> start up Ubuntu" series of events, I can simply reboot the Ubuntu and this problem will be fixed.
+		Note: If the duration between "Windows Shutdown" and "Ubuntu bootup" is long enough this problem vanishes.
 2018-10-09 14:05:12 since yesterday, the laptop starts to disconnect from wifi stochastically even when wifi signal is strong. They come in bouts, but then seem to stop happening after a while.
 2018-10-16 22:24:15 since installation (and later uninstallation) of "Mouse and Touchpad" there is a large deformed bluetooth sign that shows up on the top right, showing bluetooth to be on after start-up.
 	Attempt 1: used the first solution here: https://askubuntu.com/questions/67758/how-can-i-deactivate-bluetooth-on-system-startup
@@ -63,7 +64,7 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 		Added "bold" into line 94 and 107 between the <string> brackets to make keywords and def bold.
 		Added "bold" fontStyle property into the support.function class as well so that "print" and "range" also gets embolden.
 2018-12-11 21:05:37 Mouse erratic scroll behaviour issue started to annoy me, so I cleaned the mouse wheel and it seems fine now.
-2018-12-13 16:10:13 Accidentally booted into tty4; came out of it by messing about using the escape key. At the moment of logging into the tty4, the top-left hand corner of the screen seems to have some defect.
+2018-12-13 16:10:13 Accidentally booted into tty4; came out of it by messing about using the escape key. At the moment of logging into the tty4, the top-left hand corner of the screen seems to have some display problem.
 2019-01-02 14:33:47 Problem: 
 	Attempt 1	sudo gedit /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf to add the block of code specified here: https://askubuntu.com/questions/745135/how-to-enable-indirect-glx-contexts-iglx-in-ubuntu-14-04-lts-with-nvidia-gfx
 	Attempt 2	Attempt 1 didn't work, so I deteled that code block from 50-ubuntu.conf and added a file 50-xserver-command.conf
@@ -99,4 +100,28 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 2019-01-21 06:13:27 Attempting to add shortcuts for gedit
 	Attempt 1: Tried changing the dconf and editing ~/.config/gedit/accels as stated here: https://askubuntu.com/questions/223986/custom-keyboard-shortcuts-in-gedit but no luck.
 2019-01-21 10:03:23 Sudden blackscreen->(Some error messages about power management)->login screen; perhaps its due to my hasty shutdown this morning.
+	2019-01-26 16:22:21 same bug again as above; but there were no preciding hasty shutdown before, and it occurrsed 2 minutes after startup
+	^Fix for these were simply to re-login.
+	2019-01-30 15:15:35 same bug, this time it was achieved after closing chrome and then messing around switching workspaces.
+	2019-01-30 15:55:31 Same bug, this time achieved after closing sublime-text-3, and it froze for ~30 seconds without me pressing any buttons/switching desktops. Nautilus was still visible in the background until it automatically logged me out.
+	2019-01-31 13:20:33 again, this time it was when I was moving a Nautilus (windows explorer?) window across to a different workspace. Upon releasing the key the computer froze; long press the power button ~3 seconds logs me out, and upon re-logging in all applications were closed, as if I just started up.
+	2019-01-31 13:23:46 AGAIN, immediately after. Exactly the same bug. Perhaps it has to do with moving workspace when starting up Libre Office.
+	2019-02-23 17:37:29 Again. No clue what has happened, I just closed the Chrome window and moved workspace just before this happened. After re-logging in all windows disappeared.
 2019-01-22 01:50:40 Modified everything in powertop's Tunables page to be "good"
+2019-01-29 14:17:48 closed computer without using ctrl+L to lock computer; and then re-opened it too quickly, messed around on the power button; and then when I finally unlocked it 10 minutes later some non-gtk applications doesn't work
+2019-01-30 17:09:36 ctrl+shift+left closed sublime text unexpectedly. (Maybe it's unrelated to the buttons that I'm tapping?)
+	2019-01-30 17:33:18 same bug, this time I haven't even clicked on anything. Please stop.
+	Both times occurred while in split view; so maybe that's where the problem exist?
+	2019-01-30 19:18:40 it occurred a few more times, after my mouse idled for a long time in split view, and then as soon as I start to move my mouse it'll close sublime text.
+2019-01-31 09:31:13 touchpad click and scroll stopped working in all applications; but can still move around; mouse-over hyperlink in all applications doesn't change the cursor to the selector icon; but scrolling and clicking still works after going to virtual desktop control view by pressing Super.
+2019-03-17 00:58:12 Shortcut key to copy date doesn't work; and I can't type a single letter in chrome's search bar! Though copy and paste works fine. This happened after launching a .jar application. Issue was fixed (!!) after launching the same .jar executable file a second time.
+	2019-03-22 11:38:28 same bug; this time shortly after the copy date shortcut failure, it froze and logged me out.
+		The only clue I have is that this happened after the software updater finished updating, so maybe it's relevant.
+2019-03-17 15:55:10 For some reason all the icons on the actual desktop disappeared when I logged in; but they were still present in the desktop directory. And I got suddenly logged out once while typing in this document; but then when I logged back in everything on the desktop appeared again ¯\_(ツ)_/¯
+2019-03-29 00:32:00 mouse suddenly no longer work. Unplugging + plugging back in fixes it.
+	For my own information:
+		running "lsusb" in terminal should give 6 entries if the USB mouse is registered. The following entry should show up:
+		Bus 001 Device 012: ID 1ea7:0064  
+		(it's the shortest line)
+		If it doesn't show up, then I have to unplug-plug back in.
+2019-03-31 16:21:27 Annd for some reason I can't type on my keyboard again. WTF.
