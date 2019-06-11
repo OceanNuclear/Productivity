@@ -1,0 +1,24 @@
+Project goals:
+
+Goal 0: familiarize self with unfolding suite
+	1st milestone: ??
+	2nd milestone: ??
+
+Goal 1: look into the feasibility of neuralnetwork (TF/KERAS/scikit-learn) unfolding
+	0th milestone: background reading, check what's been done 
+	1st milestone: learn to generate parametrised spectra,
+	2nd milestone: create training data
+	3rd milesteno: see how scalable is the neural network approach to non-parametrised approaches? (literature review again)
+	4th milestone: Attempt to get the standard deviations of flux as well.
+
+Goal 2: look into the feasibility of regularization unfolding
+	0th milestone: background reading: find versions of codes that does this; and understand the theory behind them.
+	1st milestone: unfold a simple case, full-rank, nearly-square.
+	2nd milestone: unfold a more complicated case
+____
+(Goal of the team): benchmark the accuracy of all codes in the unfoldingsuite
+	optimize the accuracy for fusion purpose by	- changing group structure
+							- changing isotopes used
+							(-changing masses/geometry (trivial))
+____
+Why has no one written what we're doing in the first place?
