@@ -26,6 +26,8 @@ bg #to let those jobs keep running
 xbright +/-100
 
 grep -i Lauv 1-Sheepy.wpl
+grep -r --include="*.py" sometext .
+diff #can handle directories difference
 
 pdftotext nameof.pdf -| wc -w #counts words in pdfs; "-" before "|" makes it output inside terminal instead.
 
@@ -39,17 +41,26 @@ hostname -I #to discover my own IP address on each computer, #instead of doing a
 pscp desktopFile ocean@192.168.0.52:/home/ocean/Documents/FISPACT/FISPACT-II_disk2/	#done on my desktop, by firing up cmd
 
 Sublime Text:
-ctrl+m			#skip around inside paranthesis
+ctrl+shift+space	#surround_delete: delete brackets that ou type in; is a lot of effort but may be useful if you want to save what's in your clipboard
+ctrl+shift+[/]	#contract/expand a block of text
 ctrl+q			#expand selection to quotes
-ctrl+l			#highlight current line
-ctrl+j			#bring next line up by removing newline character at the end of current line
-ctrl+shift+up/down	#to move lines up/down
-
-ctrl+shift+space	#highlight everything in bracket
-ctrl+enter		#insert and focus to new line below current line.
-ctrl+X			#cut line
-ctrl+K/ctrl+shift+K	#delete to EoL/start of line
-edit /home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings	#to install package, because it seems package control doesn't work.
+ctrl+m			#skip around in bracket
+ctrl+shfit+v		#show clipboard history
+	Navigation: bookmarks + the following:
+ctrl+alt+a		#Acejump within line
+alt+ -/=		#cursor jump_back/jump_forward
+ctrl+alt+c		#Cycle through multi-select regions
+ctrl+alt+s		#strip selection
+ctrl+shift+l		#split_selection_into_lines
+ctrl+alt+n		#normalize cursor position within selections, and then toggle cursor between front and back of selection
+ctrl+alt+d		#regret making a multiple selection? regret no longer! turn them into separately editable fields.
+ctrl+u			#really regretting multiple selection? undo it.
+alt+home		#show_at_center
+	ctrl+alt+r		#remove empty selection region
+	ctrl+enter		#insert and focus to new line below current line.
+	ctrl+l			#highlight current line
+	ctrl+j			#bring next line up by removing newline character at the end of current line
+edit /home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings then git clone package to /home/ocean/.config/sublime-text-3/Packages	#to install package, because it seems package control doesn't work.
 ____________________________________________________________________________________________________________________________________________________________________________________________
 Network fixes:
 1.	nmclin
@@ -87,29 +98,29 @@ ps aux/ top
 
 uptime #to check up time
 last	--since 00:00 #to check all boot up time until the start of the day.
-Internet:
-pinging no longer works inside the Uni. 
-speedtest-cli is the preferred terminal app.
+ping -W 0.5 10.210.2.3 #ip route gives the ip address (10.210.2.3)
 
 #Alternative to opening in terminal
 tee somefile.txt <<EOF
-line
-line
+Some text
+Another line
 EOF
 #Directly create file inside terminal (HERE documents syntax)
 less filename#scrollable
 more filename#print to stdout
 cat filename#very similar to more
 
+find . -name ".json" #find a file with *.json as its name
 look	#look up an English word without having to check the dictionary!
 factor	#factorize any integers
+
 !!	#re-run last command
 ^foo^bar	#replace the last command's "foo" with "bar" and then re-run.
+; or && can queue tasks to be ran in the future.
 
 #Clearing out junk memory:
 sudo apt-get autoremove --purge
 sudo purge-old-kernels
-; or && can queue tasks to be ran in the future.
 
 #backup:
 backupScheduler
@@ -123,6 +134,7 @@ gitinit <repo>
 
 #to scp:
 scp <source> $PHYMAT4:/home/ADF/<dest>/.
+scpp #is the same as doing "scp -p 22722"
 
 #terminal shortcut keys:
 werase = ^W #ctrl-backspace

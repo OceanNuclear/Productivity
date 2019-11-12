@@ -1,19 +1,25 @@
-Bash:
-3b1b new video!
-The kinematic toy thing I got from the Deepak
-__
-Jim:
-1. Outdoor session: you need the skills + the Parkour vision
-2. Outdoor session without a structure will dissuade beginners
-__
-Constantly ask "if this task at hand is bringing me closer to my goal of becoming a nuclear fusion material scientist or not?"
+Currently (2019-11-08 14:57:40) to python properly, I need to: conda activate -> (updatebas ->) ipython/ python3
+Still can't open terminal
+Need to make sudo add-apt-repository ppa:webupd8team/y-ppa-manager work
+____
+cd /home/ocean/Dropbox/PTNR
+pdfcrop
+pdfseparate
+pdfjoin            
+pdfunite
+____
+docker-compose exec mongo mongo
+use default
+db.counters.find().pretty()
+____
+52:17 rule
+--Make a rule of allowing maximum of 1 extra task per day; no more.
+Constantly ask "if this task at hand is bringing me closer to my goal of becoming a nuclear fusion scientist or not?"
 
-If there's something that you feel vague about, stop what you're doing and focus on recalling that piece of info.
+(occassionally) If there's something that you feel vague about, stop what you're doing and focus on recalling that piece of info.
 
-wake up at 6:30am -> turn on laptop, download all lectures, read through them, highlight the parts that you find potentially confusing, and leave by 8.
-Holiday: Wake up at 7:30, turn on laptop, post to-do list on Discord.
-
-OWN your learning materials: don't just acquiant them. Find your own way through the new landscape of knowledge.
+#wake up at 6:30am -> turn on laptop, download all lectures, read through them, highlight the parts that you find potentially confusing, and leave by 8. <- Need to modify this for the current purpose.
+#Holiday: Wake up at 7:00, turn on laptop, post to-do list on Discord.
 
 --Checklists for tasks and subtasks minimizes time/cognitive switching penalty.
 Your brain has no time to wander around, frolicking with all that crap that you don't want to touch right now.--

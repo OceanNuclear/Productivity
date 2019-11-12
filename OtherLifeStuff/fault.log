@@ -118,6 +118,7 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 	2019-03-22 11:38:28 same bug; this time shortly after the copy date shortcut failure, it froze and logged me out.
 		The only clue I have is that this happened after the software updater finished updating, so maybe it's relevant.
 2019-03-17 15:55:10 For some reason all the icons on the actual desktop disappeared when I logged in; but they were still present in the desktop directory. And I got suddenly logged out once while typing in this document; but then when I logged back in everything on the desktop appeared again ¯\_(ツ)_/¯
+	2019-08-13 09:01:05 same bug, different day.
 2019-03-29 00:32:00 mouse suddenly no longer work. Unplugging + plugging back in fixes it.
 	For my own information:
 		running "lsusb" in terminal should give 6 entries if the USB mouse is registered. The following entry should show up:
@@ -125,3 +126,25 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 		(it's the shortest line)
 		If it doesn't show up, then I have to unplug-plug back in.
 2019-03-31 16:21:27 Annd for some reason I can't type on my keyboard again. WTF.
+2019-06-15 03:56:09 problem booting up (stuck on the fourth line of message: (3rd and 4th line being"[OK] started process error reports when automatic reporting is enabled [OK] started user manager for UID 1000") 
+	attempt 1: recovery mode, updated and upgraded everything; doesn't work.
+	attempt 2: still in recovery mode, sudo nano /etc/gdm3/custom.conf to uncomment line 10 WaylandEnable=false (HOLY SHIT IT WORKED!)
+2019-06-25 13:47:45 tensorflow acted up seriously; kept saying "can't import abs", probably due to a backward version (1.9) being used instead of the latest (1.14)
+	Fix: uninstalled everything (multiple times) and installed the latest version; took 4 hours.
+2019-07-03 07:37:31 Upon boot up the screen hung, with this message displayed: "/dev/nvme0n1p5: clean, nnn/nnn files, nnn/nnn blocks"
+	attempt 1: to follow the second answer of here: https://askubuntu.com/questions/882385/dev-sda1-clean-this-message-appears-after-i-startup-my-laptop-then-it-w (by going (from tty1) into tty2 and "sudo apt-get update") but only made it worse, as after restarting, the same screen is shown, and when activating ttyx (x=2-6) it started flopping around between ttyx and tty1 at 2 Hz, which makes it impossible to type.
+	attempt 2: Same url as above; sudo apt-get purge nvidia* didn't help.
+	attempt 3+: did the following:
+		boot-repair #installed the boot repair tool; only to realize it's useless.
+		sudo ubuntu-drivers autoinstall #to install nvidia drivers -> "nvidia-driver-410"
+	(planned next attempt (as of 2019-07-03 10:17:26): To comment away the WaylandEnable=false line in the /etc/gdm3/ directory.):<-Didn't actually do this because the attempt above actually worked!
+2019-08-07 04:58:30 Wanted to create shortcut that switches windows between monitors; so I followed this: https://askubuntu.com/questions/141752/keyboard-shortcut-to-move-windows-between-monitors
+	Doesn't work.
+2019-09-13 11:59:15 Yesterday while fixing the bot, I did `systemctl disable apparmor.service --now;service apparmor teardown` resulting in sublime text not being able to boot up today; so I fixed it today by `sudo systemctl enable --now apparmor.service`.
+2019-09-20 15:57:55 The audio doesn't turn off automatically after removing the headphones from the USBC jack; also, after waking up and loggin in from lock (Super+L; space to wake up; type in password), the first login led to the computer freezing, which, after pressing esc, returned to the login screen; typing in the password and stuff from that point on wakes it up properly.
+2019-10-29 08:53:53 The computer froze without clear reason why (a few minutes ago some of the webpages didn't load at first try, but still loaded after the second try.)
+2019-11-07 13:06:34 After accidentally uninstalling python3 and messing up most of the computer, reinstallation of all the effected module using "sudo apt-get install --reinstall <package>" has fixed a lot of bugs; but still leads to the occassional error of "ModuleNotFound" thrown at me.
+	2019-11-08 10:47:03 Attempt ... N: after installing libatlas-base-dev gfortran as well, scipy installation seems to go more smoothly than before, i.e. metadata for wheel building was acquired without error. But it does eventually fail with the error message 
+		EnvironmentError: [Errno 13] Permission denied: '/usr/local/lib/python3.8/dist-packages/scipy'
+Consider using the `--user` option or check the permissions.
+		My first attempt to fix it was use --no-cache-dir, but the same error appeared. Then I used --user instead and it worked.¯\_(ツ)_/¯ In the end I isntalled scipy, matplotlib, and IPython using --user. However, it doesn't work as well as I intended, as ipython throws an error. So now I'll let Anaconda take over.
