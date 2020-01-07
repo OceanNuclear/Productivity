@@ -1,0 +1,18 @@
+----This is the index file for the A3-folders-containing-A4 in my drawer----
+
+--2019--
+Bayesian Statistics
+Calibrating n. yield
+Effective Response Matrix.
+Explanation about ML (to Robin)
+Flow chart
+Fluexes and reponse matrix scaling for derivation + error propagation
+Global minimum (attempt to prove its uniqueness)
+Intuition
+Regularization 1
+Regularization 2
+Villiers Park
+
+--2020--
+Algorithm summary
+Regularization 3
