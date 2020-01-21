@@ -1,0 +1,4 @@
+[
+	{ "command": "prev_bookmark"},
+	{ "command": "show_at_center"},
+]
