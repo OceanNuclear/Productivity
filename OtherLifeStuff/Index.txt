@@ -6,13 +6,18 @@ Calibrating n. yield
 Effective Response Matrix.
 Explanation about ML (to Robin)
 Flow chart
-Fluexes and reponse matrix scaling for derivation + error propagation
+Fluxes and reponse matrix scaling for derivation + error propagation
 Global minimum (attempt to prove its uniqueness)
 Intuition
+Multiple a priori
 Regularization 1
 Regularization 2
+Understanding Uncertainty (done over Christmas 2019)
 Villiers Park
 
 --2020--
 Algorithm summary
+Bayesian statistics
+Entropy continuous limit
+Iterative algorithm (general)
 Regularization 3
