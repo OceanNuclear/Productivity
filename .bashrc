@@ -56,15 +56,20 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+oldPS1='${debian_chroot:+($debian_chroot)}'
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    # PS1=$oldPS1'\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1=$oldPS1'\[\033[01;34m\]\w\[\033[00m\]/ '
+    PROMPT_DIRTRIM=2
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    # PS1=$oldPS1'\u@\h:\w\$ '
+    PS1=$oldPS1'\W'
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
+# 
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
@@ -96,7 +101,6 @@ alias rmi="rm -I"
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 #alias for convenience:
 alias conv="libreoffice --headless --convert-to pdf"
 alias rungo="go build; ./go"
@@ -104,8 +108,9 @@ alias sshy="ssh -Y"
 alias bashrc="gedit /home/ocean/.bashrc"
 alias gitcom="git commit -m"
 alias gitpush="git push origin master"
-alias S="/home/ocean/Scheduler.py"
+alias S="python3 /home/ocean/Scheduler.py"
 alias nmclin="nmcli n off; nmcli n on"
+alias cleanlat="rm *.blg *.lof *.bcf *.aux *.bbl *.run.xml *.toc *.log *.out *.glo *.ist"
 alias Scheduler="sublime-text.subl /home/ocean/Scheduler.py"
 alias r="R"
 alias backupScheduler="cp /home/ocean/Scheduler.py /home/ocean/Documents/GitHubDir/Productivity/Scheduler.py"
@@ -113,8 +118,14 @@ alias bas=bashrc
 alias updatebas="source ~/.bashrc"
 alias backupbas="cp /home/ocean/.bashrc /home/ocean/Documents/GitHubDir/Productivity/"
 alias backuplife="cp /home/ocean/Desktop/commands '/home/ocean/Desktop/List of mathematical symbols commonly used' /home/ocean/Desktop/Notepad /home/ocean/Documents/fault.log /home/ocean/Desktop/Schedule.txt /home/ocean/*.sh /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/."
+alias backupsubl="cp /home/ocean/.config/sublime-text-3/Packages/*.sublime-macro /home/ocean/.config/sublime-text-3/Packages/User/*.sublime-keymap /home/ocean/Documents/GitHubDir/Productivity/OtherLifeStuff/sublime/."
 alias p="echo 'from numpy import cos, arccos, sin, arctan, tan, pi, sqrt; from numpy import array as ary; import numpy as np; tau = 2*pi
 from matplotlib import pyplot as plt' | xsel -i -b"
+#alias pip=pip3
+#alias ipython=ipython3
+#alias python=python3
+#alias p38=python3.8
+alias pwdc="pwd | xsel -i -b"
 #alias tor=/usr/bin/tor-browser_en-US/start-tor-browser.desktop
 # Alias definitions.
 alias xopen=xdg-open
@@ -138,7 +149,14 @@ if ! shopt -oq posix; then
 fi
 
 #added by Anaconda3 installer
-export PATH="/home/ocean/anaconda3/bin:$PATH"
+#alias  py3="conda activate py38"
+#Conda has two environments: one called (for legacy reaons) dowgrade, which actually contains an upgraded version (python3.8); and the other is simply base.
+alias conact='source /home/ocean/miniconda3/bin/activate'
+alias conbase='conact base' #Python3.6.9, works.
+alias conlat='conact latest'
+alias concan='conact canary'
+alias envenv="source /home/ocean/env/bin/activate"
+concan
 fispact=/home/ocean/Documents/FISPACT-II-3-20/fispact/exec/Ubuntu-14.04-X86/gfortran/fispact; export fispact
 compress=/home/ocean/Documents/FISPACT-II-3-20/fispact/exec/Ubuntu-14.04-X86/gfortran/compress_xs_endf; export compress
 #go:
@@ -147,8 +165,14 @@ export CHETHOR="MSc_PTNR_23@che-thor.bham.ac.uk"
 export PHYMAT4="HYW543@phymat4.adf.bham.ac.uk"
 export PHYMAT6="HYW543@phymat6.adf.bham.ac.uk"
 export CHI=$CHETHOR
+export ERIK="owong@erik.ccfe.ac.uk"
+export CUM="owong@login1.cumulus.hpc.l"
+export FACE="167.71.140.134"
 alias  phymat="sshy -p 22722 $PHYMAT4"
 alias  scpp="scp -P 22722"
+alias  er="sshy $ERIK"
+alias  cu="sshy $CUM"
+alias  savedir=backupdir
 #Fortran compile and run command:
 function fortify(){
 	gfortran $1.f -o $1.out
@@ -161,6 +185,17 @@ function fortify(){
 	./$1.out
 	}
 alias F=fortify
+function CPP() {
+	g++ $1.cpp -o $1.out
+	echo "End of compiling. Running program..."
+	echo "|"
+	echo "|"
+	echo "|"
+	echo "|"
+	echo "|"
+	./$1.out
+}
+
 #Function to compare content of two folders
 function lsdiff(){
 	for f in $1*; do
@@ -170,6 +205,8 @@ function lsdiff(){
 		echo "" #print newline
 	done
 	}
+#example usage: ocean@ocean-UX550VE:~/.../All_spectra_in_175/data_package_175convert$ lsdiff ./ /media/ocean/OCEANUSB/Culham/UKAEA_IAEA_Compendium/All_spectra_corrected/
+
 #3 in 1 command for git commit
 function gitall(){
 	git add .
@@ -199,3 +236,54 @@ function gitinit(){
 }
 #perhaps I have to export the following package list before installation will happen properly?
 #export PKG_CONFIG_PATH=/usr/lib/pkgconfig
+function fr(){
+	freia_e=".hpc.l"
+	freia_s="freia0"
+	sshy owong@$freia_s$1$freia_e
+}
+function pdfwc(){
+	for i in $(ls *.pdf)
+	do
+	echo ${i}
+	pdftotext ${i} - | wc
+	echo
+	done
+}
+
+
+#grep the pattern give in the .tex that's present in the current directory
+function texgrep(){
+	if [ $# -gt 1 ]
+	then
+		grep -n "$*" $(ls *.tex| head -n1)
+	else
+		grep -n $1 $(ls *.tex| head -n1)
+	fi
+}
+
+#Given the line number in the .tex file, show where that line is using "less <pdf>"
+function cursorpdftotext(){
+	fname=$(ls *.tex | head -n1 | cut -d'.' -f1) #get the file name
+	threewords=$(sed -n $1p ${fname}.tex | awk '{print $2 " " $3 " " $4}') #get the 2nd-4th words of that line in the .tex file
+	page=$(pdfgrep "$threewords" -n $fname.pdf | cut -d ' ' -f1 | sed 's/\://g') #get the page number
+	pdftotext $fname.pdf -f $page -l $page -
+}
+function cursorless(){
+	echo "usage: cursorless <line number in the .tex file>"
+	echo "then, when in 'less', type /, type ctrl+shift+v"
+	fname=$(ls *.tex | head -n1 | cut -d'.' -f1) #get the file name, assuming we're already in the same directory as the .tex file and the .pdf file.
+	threewords=$(sed -n $1p ${fname}.tex | awk '{print $2 " " $3 " " $4}') #get the 2nd-4th words of that line in the .tex file
+	echo $threewords | xsel -i -b #copy it into the clipboard
+	echo $threewords
+	less $fname.pdf
+}
+function backupdir(){
+	git add .
+	gitcom "Routine sync-ing up of my files with the remote."
+	git push origin master
+}
+function breakline(){
+	#tr ":" '\n' $1
+	sed 's/[: ]/\n/g' #use regex
+	#usage: example: echo $PATH | break
+}

@@ -8,6 +8,7 @@ Explanation about ML (to Robin)
 Flow chart
 Fluxes and reponse matrix scaling for derivation + error propagation
 Global minimum (attempt to prove its uniqueness)
+#Improvement on GRAVEL/SAND-II
 Intuition
 Multiple a priori
 Regularization 1
@@ -17,7 +18,14 @@ Villiers Park
 
 --2020--
 Algorithm summary
+Algotrade (taken out as of 2020-01-29 19:05:52)
 Bayesian statistics
 Entropy continuous limit
+Group Select (input method selection)
+HPGe detection
+Integrator notes (for programming up the cross-section collapser)
 Iterative algorithm (general)
 Regularization 3
+Self Shielding factor SSF
+Sigma/flux correction factor
+
