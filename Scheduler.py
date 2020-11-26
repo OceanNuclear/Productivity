@@ -1,4 +1,4 @@
-#!/home/ocean/anaconda3/bin/python3
+#!/home/ocean/miniconda3/bin/python3
 #1. Allow brackets in the last line of output to be read if there are no time statements
 import datetime, sys
 global TASKNUM
@@ -23,6 +23,21 @@ def grep(key,List):
 
 if len(args)>0:#would've put it at the start of the code if I could :(
 	#Quiet flag
+	if grep("-h",args) or grep("--help",args):
+		print("Scheduler.py intruction:")
+		print("Allowed flags:")
+		print("-r resttime")
+		print("-n numberoftask")
+		print("-l numberoftask")
+		print("-q (quiet)")
+		print()
+		print("Format:")
+		print("All lines containing 'am'/'pm' will be treated as a new start time, and will reset the clock.")
+		print("All lines beginning with '[]' will be treated as a task.")
+		print("All other lines will be ignored.")
+		print()
+		print("Written by Ocean Wong")
+		sys.exit()
 	if grep("-q",args) or grep("--quiet",args):
 		#remove the -q flag
 		args = [ a for a in args if ((a!="-q") and (a!="--quiet"))]#and (arg!="=") and (arg!="-r") and (arg!="--rest-time")
@@ -97,7 +112,7 @@ def string2time(string):#
 	elif (len(hour_mins)>=1):
 		print("Something's wrong, 2+ ':'s found in the time declaration statement")
 	return (hour, minutes)
-def breakatalhpa(line):
+def breakatalpha(line):
 	alpha = 'HRShoursMINminute'
 	string = "".join([" " if l in alpha else l for l in line])
 	assert sum([c.isalpha() for c in string])==0, "There are non-minute/hour string in this duration line" #make sure that there are no OTHER alphabets
@@ -126,7 +141,7 @@ def duration(time,line):#assume the line already has the relevant time info in i
 	if (_colon): assert not (_hour or _mins),"hybrid statement between 'am'/'pm' and 'hour'/'mins'!"
 	assert sum([_hour,_mins,_colon])!=0, "there are no ':' or 'a/pm'!"
 	#</True statements>
-	times = breakatalhpa(line)#remove all spaces, then them up at alphabets.
+	times = breakatalpha(line)#remove all spaces, then them up at alphabets.
 	hours, minutes = 0,0#using plural for int.
 	#convert the hour into minutes
 	if  _hour:#if there is a declaraction of hour

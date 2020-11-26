@@ -30,8 +30,10 @@ At random intervals:	ubuntu 18.04 airplane mode lock on random (turning off simp
 2018-10-09 14:05:12 since yesterday, the laptop starts to disconnect from wifi stochastically even when wifi signal is strong. They come in bouts, but then seem to stop happening after a while.
 2018-10-16 22:24:15 since installation (and later uninstallation) of "Mouse and Touchpad" there is a large deformed bluetooth sign that shows up on the top right, showing bluetooth to be on after start-up.
 	Attempt 1: used the first solution here: https://askubuntu.com/questions/67758/how-can-i-deactivate-bluetooth-on-system-startup
-	Attempt 2: sudo gedit /etc/bluetooth/main.conf, noticed bottomline says "#... Defaults to 'false'.
-	AutoEnable=true" Therefore I turned Autoenable to False instead.
+	Attempt 2: sudo gedit /etc/bluetooth/main.conf, noticed bottomline says
+	```#... Defaults to 'false'.
+	AutoEnable=true```
+	Therefore I turned Autoenable to False instead.
 	Attempt 3: In the same page in Attempt 1, re-did answer 1, did answer 3 and 6(blacklist bluetooth, blacklist btusb), done 8.3 (sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/blueman.desktop
 gnome-session-properties#where I disabled the start-up applet for bluetooth); planning to remove the effects of answer 1,3,6 after re-boot to confirm that 8.3 works.
 2018-10-17 06:41:03 bluetooth is now stuck at off position...
@@ -148,3 +150,49 @@ gnome-session-properties#where I disabled the start-up applet for bluetooth); pl
 		EnvironmentError: [Errno 13] Permission denied: '/usr/local/lib/python3.8/dist-packages/scipy'
 Consider using the `--user` option or check the permissions.
 		My first attempt to fix it was use --no-cache-dir, but the same error appeared. Then I used --user instead and it worked.¯\_(ツ)_/¯ In the end I isntalled scipy, matplotlib, and IPython using --user. However, it doesn't work as well as I intended, as ipython throws an error. So now I'll let Anaconda take over.
+		Second attempt, after talking to the RSE: 2019-11-14 15:04:54: Reinstalled the python and python3 using Synaptic (graphical) package manager.
+		2019-11-14 18:11:40 Window snapping ability using keyboard shortcut is very unreliable (and infuriating). But can be corrected by snapping any window once using your cursor.
+2019-11-16 13:46:07 Booted into recovery mode: while all of my scripts (backslash.sh, copywords.py, etc.) works, some functionalities are lost, the most obvious one being that nvidia driver is not loaded so the screen is in huge text size i.e. very poor resolution.
+	Attempt1: The problem of file space being filled up is solved by removing the ~/.cache/tracker/meta.db (which is a huge file).
+	Because of the bug fix above, now Chrome can be opened, and stuff can be removed. BUT it is rapidly filling up again. I suspect this is what uses up my battery so quickly. 
+	ACTUALLY no, something else in /var/ is filling it up, likely syslog. Now I've managed to stop it, after using rm -f on syslog, and then waiting for an hour or so.
+	BUT it's rapidly filling up again. AND I've confirmed that it's filling up /var. And it's NOT in log.
+	I suspect it's because of me making the wrong python3 link (pointing to anaconda instead). So I've removed that, and see if it stops.
+	Well it doesn't. I haven't reverted it back yet (2019-11-16 15:51:49) But I have identified that it is a problem with /var.
+	It has to be one of the packages.
+	FUCK it is /var/log/syslog, but it's persisting after being deleted. P
+	Anyways, now (2019-11-16 16:44:58) I've resorted to uncommenting this line on the bash file: (l143 export PATH="/home/ocean/anaconda3/bin:$PATH") which, intheory, should allow my python to work properly. At least for now.
+	2019-11-16 16:51:00 Phew! It's fixed now (all keys work, gnome session booted up properly, nvidia driver is behaving perfectly). Now the text is smaller (I like it that way), though from the sound of it, it's still furiously writing to syslog. I.e. it's writing at the rate of 1e7 bytes per second. NOW I can confirm that all of the memory being used up comes from /var/log being written into. (AND NOTHING ELSE!)
+	Note that once I turn off the computer, /var/log/syslog (or tmp file) gets destroyed and the memroy available gets freed up to 49% again.
+	2019-11-17 00:05:34 Finally fixed everything by reversing back to the system version of python3 (3.6). So it's pretty easy actually. :(
+2019-11-17 00:06:00 Now I only have to fix the bug of a super verbose docker debugger that is somehow hung up on writing infinitely messages to /var/log/syslog. This is FIXED by ```pkill docker``` :)))
+2019-11-17 00:51:35 The only probelm with the solution above ^ is that I need to pkill docker everytime I start up. ∴ Need to mess around in crontab next time.
+	Note: the problem of not being able to open terminal from the Dock/ Activities overview is purely due to having the wrong version of python referred to. ¯\_(ツ)_/¯
+2019-11-17 00:54:57 Summary of what I've done+learned yesterday (before midnight) and today: 
+	1. Do not change the system version of python. If you'd like to use more advanced version > python3.6 (which was decided at the time of your GNU/Linux installation), then use conda activate. conda is already updated to the latest stable python (3.7.4; 3.8.0 is not stable/ implementable as python3 as of today)
+	2. You have two installations of Python: system version (```sudo update-alternatives --display python3```priority 1: 3.6; priority 2: 3.8) and conda (3.7.4).
+	3. Anaconda can be updated with ```conda update conda``` while system version (3.6) can be updated with ```pip install --upgrade pip```. They need to be upgraded separately, but there is no harm in not upgrading the system version.
+	4. My bash file appends the path ```export PATH="/home/ocean/anaconda3/bin:$PATH"``` onto python whenever I open terminal. Therefore if there are any system scripts that somehow starts the .bashrc before getting the first python interpreter in $PATH, then it may not find the system version python 3.6 package that it expects to have (IFF conda's python 3.7 doesn't have that packge but pip's (system's) python 3.6)
+2019-11-18 12:19:39 Found out that it may be due to multiple installations of docker (https://askubuntu.com/questions/1188908/what-does-this-docker-log-entry-mean).
+	Attempt 1: Considering that I only use docker-ce I have removed the version of docker installed by snap. ```docker``` (in terminal) still works after this.
+	YEP! Problem fixed.
+2019-11-18 17:44:47 The issue of noisy plotting (https://github.com/sherpa/sherpa/pull/537) remains. It seems to be an issue due to the mp package. Don't know how to fix, but will simply be living with it by only using python3 instead.
+		Bug affects: plt plotting function, noisy Errors
+		2019-11-19 14:16:19 Trying to fix that bug: dug through all of the similar errors, but I've pinpointed it to be due to the fact that IPython in /usr/lib/python3/dist-packages is not getting updated to 3.7 (which anaconda was running with), but was somehow being used by anaconda. Since I don't want to mess around with pip a lot, I simply removed the /usr/lib/python3/dist-packages/ipy* and /usr/lib/python3/dist-packages/IPython (moved them into a backup directory called ```dist-packages_old/```) and reinstalled ipython. (I realized this after comparing the content ```diff -y /usr/lib/python3/dist-packages/IPython/core/interactiveshell.py /home/ocean/miniconda3/lib/python3.7/site-packages/IPython/core/interactiveshell.py```, which should've been the same, considering that I should only have conda's version of IPython installed at that time.) ```conda install ipython numpy scipy pandas matplotlib seaborn anaconda-clean```  Well even after that it is still fucked. WHY?
+		Additional problem: ```sudo apt-get install pip3``` leads to installation of an unusable version of pip (either 19.something or 9.something) which only works again after removing /home/ocean/.local/lib/python*/pip/.
+		Even after that, it doesn't recover properly. At this point I can only assume that by uninstalling python, I've broken something without source code, i.e. some binary executable files is now permanently pointing to the wrong file. Therefore the only solution is to reinstall the OS.
+	Current workarounds: currently I can use virtual environment with pip3, where matplotlib.pyplot isn't broken. This side-steps the issue of matplotlib misbehaving. Meanwhile, the noisy traceback and simply be ignored.
+	2019-11-21 13:14:36 Re-installed conda, and made a virtual environment ("downgrade") in which python3.6.8 was installed instead. And then I installed ipython and scipy, and ran this script; and THIS time it's fine, i.e. no error in ipython3.6.
+		So now I've progressively upgraded and realized that as soon as I upgrade it to 3.7.4 it WILL lead to an error. ∴I will leave my system version as 3.6 and use ipython there when necessary! Conda is used for canary work, i.e. upgrading to 3.8. (2019-11-21 13:39:37 It's been slowing trying to upgrade to 3.8 right now... It's been 10 minutes already.)
+		2019-11-22 10:04:25 WTF conda's matplotlib in 3.8.0 suddenly started working, perhaps because I added the conda-forge channel. (but I only added it in the env that I deleted...) Therefore my only remaining concern is the noisy traceback...
+2020-01-21 17:36:16 In Sublime text, I swapped the function of jump_to_last_region from shift+esc to esc. Also added a function. 
+	2020-01-21 17:42:39 The files changed are /home/ocean/.config/sublime-text-3/Packages/Sublime-MultiEditUtils/Default (Linux).sublime-keymap and /home/ocean/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap
+2020-04-24 09:58:45 (Not a bug) ```sudo apt-get update``` updated pulse-audio's .pa file at /etc/pulse/default.pa, while I kept my (customly modified) old version in custom.pa. In the future if the current version of defualt.pa causes things to break I can switch back by ```sudo rm /etc/pulse/default.pa; sudo mv /etc/pulse/custom.pa /etc/pulse/default.pa```
+2020-05-23 14:14:45 The ctrl+shift+/ key (comment out command) doesn't work in sublime, after plugging in my Technet keyboard USB (externally) yesterday night (now already unplugged). According to https://unix.stackexchange.com/questions/437201/why-does-not-keypresses-to-the-pause-break-key-reach-xev#comment790536_437252 the keypress event must've been captured by some application.
+	Attempt(s): pkill gnome-shell did the trick, indicating that the problem is within gnome shell. Then futher messing around in gnome's dconf-editor made me realize that the problem must be with my custom shortcut of getShrug.
+	Explanation: 2020-05-23 16:11:46 Turns out my gnome custom shortcut for getShrug was in the way (it was ctr+/); when the system receives the key <ctrl><shift></>, it looks at the <ctrl> modifier, and pairs it with the </> key, merge it into a new key (let's call it <ctrl/>), and then apply the shift modifier only to find that the system has no <shift><ctrl/> key. Therefore it stops there, without sending the signal to sublime.
+	Fix: Assigned getShrug and getTimestamp to ctrl+shift+# and ctrl+# respectively since these shortcut keys seems to be unused in my workflow.
+	
+2020-07-06 16:59:00 Sudden log-off at 95 percent battery and plugged in. (symptoms before log-off: frozen screen, but music still playing)
+2020-07-14 12:47:53 Another sudden log-off, 99% battery and plugged in. No frozen screen/playing music/any other symptom before the event, it came suddenly and without a sign.
+2020-09-03 00:56:03 Not a fault: Automatic update: "Replace your changes in '/etc/grub.d/10_linux' with a later version of the configuration file?"

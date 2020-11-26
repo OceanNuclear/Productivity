@@ -1,41 +1,67 @@
-Currently (2019-11-08 14:57:40) to python properly, I need to: conda activate -> (updatebas ->) ipython/ python3
-Still can't open terminal
-Need to make sudo add-apt-repository ppa:webupd8team/y-ppa-manager work
+3. Use FISPACT-II
+4. Set up meeting with Mark Gilbert and Tim Eade and Greg
 ____
-cd /home/ocean/Dropbox/PTNR
-pdfcrop
-pdfseparate
-pdfjoin            
-pdfunite
+- Graphics tablet
+- Share the fact that I did a run and I did a remote Zoom workout/Parkour class with my friends!
+- Hackathon ideas were great; meme battle, Oxfess sentiment analyser, etc.
+- Share the night climbers story: I couldn't go to Oxford, but saw the chat where one of the chat group members said they saw the Braisenose crawling with security, and asked if they needed some help such as having a friend open the front window and letting them in. 
+And then about 2 minutes later we've got a response that they got down safely and ran away. But they didn't have time to explain in detail in the voice message of what's going on, because they're technically still on the run.
+About 5 minutes later they explained that while they were already on the roof, they saw beams of light searching around, and so they immediately ducked down to avoid being caught, and went towards the drainpipe.
+On the way there they were literally walking on front of people's windows, so one person saw them and opened the window and asked what were they doing, so they were like caught red-handed. As a last ditch effort of not being snitched out, they explained that they were climbing, and didn't have any malicious intention, and somehow it worked, the guy just said ¯\_(ツ)_/¯ and let thmem go on their way. (These are not the droids you're looking for)
+The then looked downt he drain pipe, nearly catching a security's eye, but as soon as they saw him they hid behind the side of a roof (The facade thing that protrudes over the top), and then quickly and quietly slide down the drainpipe once he left, and ran off into the night.
 ____
-docker-compose exec mongo mongo
-use default
-db.counters.find().pretty()
+Supervisory meeting:
+- Behavioural safety course thingy that I'm supposed to sign up for on U4BW
 ____
-52:17 rule
---Make a rule of allowing maximum of 1 extra task per day; no more.
+- 4th Dec presentation?
+    - Ross: talks about what MAXED and GRAVEL are, explain how the unfoldingsuite unifies input, and makes things easier
+    - I should talk about: new algorithms (unfoldingsuite will have more capability), (benchmark against,) FoilSelector, Machine learning
+    - Just sharing different people's experiences in unfolding. Challenges, etc.
+        - Potentially end-users 
+        - BAE
+        - Public Health England
+        - AWE
+        - NPL
+        - STFC? (ISIS ChipIr)
+- Publish a paper? Search web of science of similar topics!
+    - Error propagation -> software paper/journal
+        - Benchmarking needed
+    - Regularization
+    - AMAXED + IMAXED
+    - FoilSelector -> Do ChipIR experiment 
+____
+Checklist:
+- Have you got a clean working environment with comfortable temperature/seating
+- water available, had EDIBLE food
+- phone flipped over
+- reviewed the to-do list to remind yourself that lower priority tasks exists
+- create deadlines for sub-tasks
+- What is causing you pain/aversion from your current task?
+Make the barrier to doing your recreational task as low as possible.
+- Use the FTSE-100 data (covariance etc.)
+____
 Constantly ask "if this task at hand is bringing me closer to my goal of becoming a nuclear fusion scientist or not?"
+Context switching is extremely mentally taxing and the ONLY thing that will ever break your concentration
 
-(occassionally) If there's something that you feel vague about, stop what you're doing and focus on recalling that piece of info.
-
-#wake up at 6:30am -> turn on laptop, download all lectures, read through them, highlight the parts that you find potentially confusing, and leave by 8. <- Need to modify this for the current purpose.
+#wake up at 6:30am -> turn on laptop, write down schedule for the day, include 1 self-development/productivity enhancing task
 #Holiday: Wake up at 7:00, turn on laptop, post to-do list on Discord.
 
 --Checklists for tasks and subtasks minimizes time/cognitive switching penalty.
 Your brain has no time to wander around, frolicking with all that crap that you don't want to touch right now.--
 --If you have the purpose of your next task written down*, your brain will home in on that task because it'll remember about this purpose as soon as you defocus--
 
-
 I can reduce rate of error-occurance/procrastination by
 	1. repeated practice (spaced repetition as well)
 	2. Building up a system (develop notations+rules)
+		Leave time for redundant review (chance to look at it with a fresh mind) for important meetings/publishings, e.g. double check the required documents on separate days
 	3. Getting into the correct(calm) mental state (by eating and exercising correctly)
 	(See 17.DailyThought/2018-09-08 for explanation and guilelines.)
 Set up systems in such a way that minimizes your effort and decisions required in the future.	#Thus you can focus your energy on doing the task correctly, not on organization/set-up.
 Procedurize, procedurize, procedurize.
 
 	To stay functional:
-		Keep your productivity toolset + environment easy to use and clean.
+		Keep your productivity toolset usable and clean,
+		Clean your work environment,
 		+ use studying techniques/mnemonics + use your key skills of communications) and be productive in order to stay intellectually superior.
 	To not get lost in my task and lose sight of other perspectives (and become non-socializable):
 		Surround yourself with people who may have different priorities, but are at least about as smart as you are.
@@ -50,7 +76,12 @@ if (motivation==False) and (OptionsICanThinkOfRightNow()==["procrastinate","dive
 	GetMotivationBy( WriteEssay("how is the PROCESS OF the next task significant to your goals, ideals, identity, interest", file="ScratchPad.txt") )
 	GetMotivationBy( WatchProductivityVideo() )
 
-	GetComforatbleBy( ListenTo( randomChoose(["postrock","chillstep","dubstep","futurebass"]) ) )
 	GetComfortableBy(WriteFloatingThoughts(file="Scratchpad.txt"))	#assuming you have interpersonal relationships problems waiting to be sorted out
-	or GetComfortableBy(TakeAWalk())
 	GetFlowBy( ToDoList( breakdown(task,subtask) ) )	#make your brain overflow with ideas through making the plan, thus entering flow state.
+--Make a rule of allowing maximum of 1 extra task per day; no more.
+(occassionally) If there's something that you feel vague about, stop what you're doing and focus on recalling that piece of info.
+____FISPACT
+/home/ocean/Documents/FISPACT-II-3-20
+/home/ocean/Documents/FISPACT-II-3-20/TutorialTest/workshops/2019_manchester/exercises/doc
+/home/ocean/Documents/FISPACT-II-3-20/TutorialTest/workshops/2019_manchester/exercises/files/basic/printlib
+/home/ocean/Documents/FISPACT-II-3-20/TutorialTest/workshops/2019_manchester/slides

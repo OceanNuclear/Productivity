@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "¯\_(ツ)_/¯" | xsel -i -b; #put the symbol into the clipboard
+echo "¯\_(ツ)_/¯" | tr -d "\n" | xsel -ib; #put the symbol into the clipboard, ```tr -d``` to remove the newline character

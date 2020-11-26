@@ -1,16 +1,36 @@
-Saturday:
-[x]Visit Will
-[]Remove all the duplicates for 2019-10-12
-    3:06pm 1 hour
-[]Reply to the SHU and visa application email (1 hour)
-    4:06pm 1 hour
-[]Parkour Park application (1 hour)
-    5:06pm 1 hour
-[]Go through checklist: 1st item: Explain NN to Robin.
-    7:06pm 2 hours
-[]Crop photos for 2019-10-27 (need internet) (80 mins)
-    8:26pm 80 mins
-[]Check duplicates for 2019-10-27
-Sunday:
-[]Equip yourself with replacement pen ()
+Wednesday:
+[]Clean floor
+[]Send thank you email for tablet
+[]Send email about behavioural safety course thingy to Chantal
+[]openmc development communications
+[]Reply to messages Tinder
 
+[]Prepare presentation
+[]Make animation of how different parts of the spectrum narrows when foils of different activities are added, first using tablet and next using Python.
+[]Look into the Decay probability issue (write on paper)
+
+Later:
+[]Try the basketball + dance things Maria has been telling me
+
+Website:
+[]Check if Google analytics stream is set up correctly
+[]Check if personal website works on all platforms and "TRANSMIT DATA AT EXTREMELY FAST SPEEDS"
+    []Fix the www redirect
+[]Check how to optimzie SEO for GitHub Pages
+dig www.oceannuclear.co.uk +nostats +nocomments +nocmd
+dig oceannuclear.github.io +nostats +nocomments +nocmd
+
+Daily task:
+[]calisthenics workout/run
+[]commute by bike and/or read 10 pages
+[]make bed
+[]put 1 exciting thing (self-development/ productivity related) into your schedule of today/ the near furture
+[]Stretch
+[]Open curtains
+
+----Make the barrier to doing your recreational task as low as possible.
+Interesting:
+[]Finish Bash's question
+[]Fourier transform some white/brown/pink/uniform noise
+[]Use the FTSE-100 data (covariance etc.)
+[]Make arduino stuff?

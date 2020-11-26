@@ -28,6 +28,7 @@ xbright +/-100
 grep -i Lauv 1-Sheepy.wpl
 grep -r --include="*.py" sometext .
 diff #can handle directories difference
+diff ... -u | colordiff | diff-highlight #clearer difference
 
 pdftotext nameof.pdf -| wc -w #counts words in pdfs; "-" before "|" makes it output inside terminal instead.
 
@@ -60,6 +61,8 @@ alt+home		#show_at_center
 	ctrl+enter		#insert and focus to new line below current line.
 	ctrl+l			#highlight current line
 	ctrl+j			#bring next line up by removing newline character at the end of current line
+alt+shift+right click   #deselect (remove from multiple selection) current selection
+Edit->Code Folding->Level 3
 edit /home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings then git clone package to /home/ocean/.config/sublime-text-3/Packages	#to install package, because it seems package control doesn't work.
 ____________________________________________________________________________________________________________________________________________________________________________________________
 Network fixes:
@@ -77,6 +80,8 @@ dpkg-query -W -f='${Installed-Size;8}  ${Package}\n' | sort -n
 #To display WiFi signal strength in the terminal, you can run this command:
 watch -n 1 "awk 'NR==3 {print \"WiFi Signal Strength = \" (\$3/70)*100 \" %\"}''' /proc/net/wireless"
 #Or just use wavemon. You know that's much better.
+or use ```mtr```#instead of ping
+use ```nl``` to replace ```cat```
 (For CCFE: WORLDnet-WiFi; CCFEguest)
 
 #Libre office:
@@ -94,12 +99,15 @@ pdfunite *.pdf out.pdf	#for concatenating pdf (merge pdf)
 	
 #To show running processes:
 ps aux/ top
+pstree
 #or just use system monitor.
-
+sensors #check temperatures
 uptime #to check up time
 last	--since 00:00 #to check all boot up time until the start of the day.
+#UKAEA:
 ping -W 0.5 10.210.2.3 #ip route gives the ip address (10.210.2.3)
-
+ping -W 0.5 10.253.3.2
+#Or check out the same two addresses ^ above in Chrome
 #Alternative to opening in terminal
 tee somefile.txt <<EOF
 Some text
@@ -113,6 +121,7 @@ cat filename#very similar to more
 find . -name ".json" #find a file with *.json as its name
 look	#look up an English word without having to check the dictionary!
 factor	#factorize any integers
+strings #see all readable text inside a binary
 
 !!	#re-run last command
 ^foo^bar	#replace the last command's "foo" with "bar" and then re-run.
