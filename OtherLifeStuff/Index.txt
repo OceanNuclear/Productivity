@@ -1,4 +1,5 @@
-----This is the index file for the A3-folders-containing-A4 in my drawer----
+----This is the index file for the A3-folders-containing-A4 in my drawer;
+    And other smaller files that I carry.----
 
 --2019--
 Bayesian Statistics
@@ -8,7 +9,7 @@ Explanation about ML (to Robin)
 Flow chart
 Fluxes and reponse matrix scaling for derivation + error propagation
 Global minimum (attempt to prove its uniqueness)
-#Improvement on GRAVEL/SAND-II
+Improvement on GRAVEL/SAND-II
 Intuition
 Multiple a priori
 Regularization 1
@@ -18,14 +19,39 @@ Villiers Park
 
 --2020--
 Algorithm summary
-Algotrade (taken out as of 2020-01-29 19:05:52)
-Bayesian statistics
+Algotrade
+AMAXED
+Bayesian statistics 2
+CHI-SQUARED DOC
+Covariances (disorganized)
+D_KL
+Dual numbers -> autodiff (+ STAY'SL)
 Entropy continuous limit
-Group Select (input method selection)
+File state diagrams
+GRAVEL SUCKS
+Group Select (input method selection) (Absent as of 2020-12-11 15:28:40)
 HPGe detection
 Integrator notes (for programming up the cross-section collapser)
-Iterative algorithm (general)
+Interpolation/extrapolation of neutron spectrum analysis (quick)
+Iterative algorithm (general) (absent as of 2020-12-11 15:30:56)
+MAXED including covar. + re-proof of uniqueness of max/minimum
 Regularization 3
+Regularization (working version)
 Self Shielding factor SSF
 Sigma/flux correction factor
+Tinder maths
+Unfolding program 1st Gen (for figuring out IMAXED, pinv)
+Wolfe Condition + alternative step size determination method for IMAXED
 
+--black file--: quick access files
+Algotrade
+Bateman equation (for Foil Selector)
+Translating MAXED
+misc projects: MIT course, etc.
+
+--transparent file with white botton--
+All other borrowed files
+
+--clipboard--
+Blank sheets, the 1-2 projects that I'm immediately working on
+Foil Selector 2
