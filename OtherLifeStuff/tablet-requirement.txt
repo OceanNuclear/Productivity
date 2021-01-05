@@ -1,0 +1,5 @@
+Software that my tablet will need to use for drawing:
+    should have fast access to the following functions:
+        - Select pen stroke/area and remove (preferably with a hotkey to toggle/enable while held down)
+        - Select area and copy -> paste
+        - Insert text box

@@ -1,0 +1,36 @@
+Useful unfolding tool for FUSION powerplants
+	- Foils at FW
+	- VV
+Possible benefit to target users:
+    Neutronics:
+	- Power estimation and management
+	    Total area under the curve
+	- Tritium breeding and consumption
+        - module specific: 
+            Li t production reaction, 
+            Pb n multiplier reaction,
+            etc.
+	- Radiation damage estimation and monitoring:
+	    - DPA
+	    - specific transmutation reaction in the EUROFER
+	- Shielding: 
+	    high energy part and total yield
+
+    Plasma physics:
+    - ?? what part of the spectrum concerns them the most ?
+
+Best procedure procedure:
+- irradiate for seconds, minutes, to days.
+- hit button for gamma spec (possibly enter information about the gamma spec)
+- Give a spectrum with uncertainties. (10-20 min)
+
+Ask about parametric plasma source, WHY, what physical processes
+
+Foil selection tool: we don't have any
+	-material properties: no fire, no explosion; no fissionable
+		-Add alloys
+	-gamma lines do not overlap
+	-medium half lives
+	-sample the important part of the spectrum
+	-IRDF -> EAF
+		-Deliberately add self shielding for thermal region? Or not.

@@ -1,5 +1,9 @@
 [
-	//Assigned the built-in shfit+esc (to the top selection region) to shift+esc
+	// column select, i.e. the right-click shift drag thing.
+	// {"keys": ["alt+shift+up"], "command": "column_select", "args": {"by": "lines", "forward": false}},
+	// {"keys": ["alt+shift+down"], "command": "column_select", "args": {"by": "lines", "forward": true}},
+
+	// Assigned the built-in shfit+esc (to the top selection region) to shift+esc
 	{ "keys": ["shift+escape"], "command": "single_selection", "context":
 		[
 			{ "key": "num_selections", "operator": "not_equal", "operand": 1 }
@@ -16,7 +20,7 @@
 			{ "key": "has_prev_field", "operator": "equal", "operand": true }
 		]
 	},
-	//Used ctrl+e as well so that I don't have to undo my selection when escaping the panel.
+	// Used ctrl+e as well so that I don't have to undo my selection when escaping the panel.
 	{ "keys": ["ctrl+e"], "command": "hide_panel", "args": {"cancel": true},
 		"context":
 		[

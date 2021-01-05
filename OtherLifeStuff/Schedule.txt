@@ -1,24 +1,26 @@
-Wednesday:
-[]Clean floor
-[]Send thank you email for tablet
-[]Send email about behavioural safety course thingy to Chantal
+Monday:
+[]Clear transparent files misc. paper
+Sunday (again):
+[]Update the backuplife command in bas
+[]Updatebas, sublime, life etc.
+
+Tuesday:
+[]Do math of the n=4 and n=5 cases
+[]Find software that satisfies the requirements on ~/Documents/PhD/tablet-requirement.txt
+[]write overlap checker
+[]Play with exp algorithms on C
+
+Wedneday:
+[]Change the animation on the presentation
 []openmc development communications
-[]Reply to messages Tinder
-
-[]Prepare presentation
-[]Make animation of how different parts of the spectrum narrows when foils of different activities are added, first using tablet and next using Python.
-[]Look into the Decay probability issue (write on paper)
-
+[]Plot the gamma peaks and find overlaps
 Later:
-[]Try the basketball + dance things Maria has been telling me
+[]Send the receipt to Po /home/ocean/Downloads/namecheap-order-67865780.pdf
+[]Call Adam?
+[]Read the 6 outlook emails in the inbox
 
-Website:
-[]Check if Google analytics stream is set up correctly
-[]Check if personal website works on all platforms and "TRANSMIT DATA AT EXTREMELY FAST SPEEDS"
-    []Fix the www redirect
-[]Check how to optimzie SEO for GitHub Pages
-dig www.oceannuclear.co.uk +nostats +nocomments +nocmd
-dig oceannuclear.github.io +nostats +nocomments +nocmd
+Wednesday:
+[]Change tinder profile
 
 Daily task:
 []calisthenics workout/run
@@ -31,6 +33,7 @@ Daily task:
 ----Make the barrier to doing your recreational task as low as possible.
 Interesting:
 []Finish Bash's question
-[]Fourier transform some white/brown/pink/uniform noise
+[]Find software with [typing, straight-line, hand-drawn, boxes, cut-paste] functionality
+[]Add sitemap to oceannuclear.co.uk
 []Use the FTSE-100 data (covariance etc.)
 []Make arduino stuff?

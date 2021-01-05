@@ -1,0 +1,32 @@
+Purpose: Develop a prototype system of neutron spectrum unfolding for a future nuclear fusion power plant.
+
+Assumption:
+- Future fusion plants will use H&A mode (or maybe occassionally L-mode at start-up) confinement
+Requirement:
+- Such fusion plant's FW has not been decided yet, so we have to be able to unfold n-spec from all types of FW/VV configurations
+- (For MCNP-modelling dependent parts:) Our knowledge of the is accurate enough to model the neutron source.
+- The neutron spectrum is weakly dependent on the plasma mode and strongly dependent on the FW.
+- But can still make assumption about the plasma condition: e.g. isobaric (i.e. constant magnetic pressure) surfaces are isothermal, etc., due to equilibrium.
+Objectives
+1. Create list of MCNP model with exhaustive list of configurations (FW design, operating modes, DT ratio, plasma geometry, fuel mixture ratio, and other plasma parameters:
+	Ion density exponent
+	Ion temperature exponents
+	Ion density at center
+	Ion density at pedestal
+	Ion density at separatrix
+	Ion temperature at center
+	Ion temperature at pedestal
+	Ion temperature at separatrix
+	Minor radius at pedestal
+)
+	(Note: if the neutron sources do not accurately represent the real neutron sources of the fusion reactor, then the whole FoilSelection and covariance measurement is wrong (and needs to be updated) )
+2. Find the one matrix that is able to unfold each of them with the lowest uncertainty
+3. (optional) Find the covariance between these procedurally MCNP-generated spectra?
+4. (optional) Optimize the FoilSelector further with the covariance matrix.
+____Old plan
+1. Use EXISTING (MAXED)
+2. Use new (IMAXED, Regularization)
+2.5Use Foil Selector to reduce 
+2.75 Error propagation with apriori and Rm
+3. Use machine learning to break free of these constraints of the a priori
+    -->

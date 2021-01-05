@@ -1,30 +1,8 @@
-3. Use FISPACT-II
-4. Set up meeting with Mark Gilbert and Tim Eade and Greg
-____
-- Graphics tablet
-- Share the fact that I did a run and I did a remote Zoom workout/Parkour class with my friends!
-- Hackathon ideas were great; meme battle, Oxfess sentiment analyser, etc.
-- Share the night climbers story: I couldn't go to Oxford, but saw the chat where one of the chat group members said they saw the Braisenose crawling with security, and asked if they needed some help such as having a friend open the front window and letting them in. 
-And then about 2 minutes later we've got a response that they got down safely and ran away. But they didn't have time to explain in detail in the voice message of what's going on, because they're technically still on the run.
-About 5 minutes later they explained that while they were already on the roof, they saw beams of light searching around, and so they immediately ducked down to avoid being caught, and went towards the drainpipe.
-On the way there they were literally walking on front of people's windows, so one person saw them and opened the window and asked what were they doing, so they were like caught red-handed. As a last ditch effort of not being snitched out, they explained that they were climbing, and didn't have any malicious intention, and somehow it worked, the guy just said ¯\_(ツ)_/¯ and let thmem go on their way. (These are not the droids you're looking for)
-The then looked downt he drain pipe, nearly catching a security's eye, but as soon as they saw him they hid behind the side of a roof (The facade thing that protrudes over the top), and then quickly and quietly slide down the drainpipe once he left, and ran off into the night.
-____
-Supervisory meeting:
-- Behavioural safety course thingy that I'm supposed to sign up for on U4BW
-____
-- 4th Dec presentation?
-    - Ross: talks about what MAXED and GRAVEL are, explain how the unfoldingsuite unifies input, and makes things easier
-    - I should talk about: new algorithms (unfoldingsuite will have more capability), (benchmark against,) FoilSelector, Machine learning
-    - Just sharing different people's experiences in unfolding. Challenges, etc.
-        - Potentially end-users 
-        - BAE
-        - Public Health England
-        - AWE
-        - NPL
-        - STFC? (ISIS ChipIr)
-- Publish a paper? Search web of science of similar topics!
-    - Error propagation -> software paper/journal
+1. Chantal: How to make those email signature render properly
+2. Science communication: How to do that? any idea?
+____software paper/journal:
+    - Bateman equation work
+    - Error propagation
         - Benchmarking needed
     - Regularization
     - AMAXED + IMAXED

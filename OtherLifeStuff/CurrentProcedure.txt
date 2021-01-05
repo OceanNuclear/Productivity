@@ -1,0 +1,35 @@
+(Current *actual* procedure of how things are done)
+
+Generate the FW spectrum - MCNP
+
+Measure the FW spectrum - Unfolding (normal/ML)
+    -> Source in MCNP
+
+Calculation:
+step 1:
+    MCNP-MODEL with (parametric) plasma source
+        -> expected FW spectrum (at irradiation station)
+        -> expected Blanket spectrum
+
+step 2:
+    Take the 1st result of step 1 -> FISPACT model
+        -> expected activities in the foils
+
+step 3:
+    Experimentally verify step 2 (unfolding)
+
+    (if matching, then think more carefully about step 1)
+        e.g.
+        parametric plasma source was wrong
+            missing/too many reactions included
+            fuel percentage,
+        materials (different moderation than expected)
+    if still not matching: Add hard-coded Scotch Mist :|
+
+PhD point:
+    - ML: skip step 1+2
+    - Normal unfolding: make step 2 easier
+
+Far into the future:
+    - Use ML algorithm on nuclear power plant + pneumatic system
+    - gives efficiency, power production, fuel burnup, 

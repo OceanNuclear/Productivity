@@ -63,7 +63,8 @@ alt+home		#show_at_center
 	ctrl+j			#bring next line up by removing newline character at the end of current line
 alt+shift+right click   #deselect (remove from multiple selection) current selection
 Edit->Code Folding->Level 3
-edit /home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings then git clone package to /home/ocean/.config/sublime-text-3/Packages	#to install package, because it seems package control doesn't work.
+edit "/home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" then git clone package to /home/ocean/.config/sublime-text-3/Packages	#to install package, because it seems package control doesn't work.
+best font size: 11.7
 ____________________________________________________________________________________________________________________________________________________________________________________________
 Network fixes:
 1.	nmclin
@@ -121,7 +122,16 @@ cat filename#very similar to more
 find . -name ".json" #find a file with *.json as its name
 look	#look up an English word without having to check the dictionary!
 factor	#factorize any integers
-strings #see all readable text inside a binary
+strings #see all readable/printable/non-special character text inside a binary file/ executable
+
+____Drawing softwares:
+- MyPaint (super simple/no frills)
+- Krita (SVG, has layers, can make animations)
+- GIMP (wide support)
+
+    - Synfig (Not donwloaded yet) (Animation based)
+    - (Alchemy is the same as Mypaint
+____
 
 !!	#re-run last command
 ^foo^bar	#replace the last command's "foo" with "bar" and then re-run.

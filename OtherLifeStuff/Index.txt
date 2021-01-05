@@ -55,3 +55,35 @@ All other borrowed files
 --clipboard--
 Blank sheets, the 1-2 projects that I'm immediately working on
 Foil Selector 2
+
+
+
+
+
+
+
+----Important virtual/digital files:
+~/Documents/PhD/:
+    ./Thesis/*/VerifyClaims.txt # List of things that I'm uncertain about and has to be verified later.
+    ./Index.txt # This very file
+
+    ./CurrentProcedure.txt # Current procedure of "Unfolding" at UKAEA
+    ./CulhamNeeds.txt
+    ./PhDObjectives.txt
+    ./tablet-requirement.txt # requirements for a tablet drawing software
+
+    # less used:
+    ./Papers/SDEF/Comments.txt
+    ./Algorithm/algorthm_in_use.lst # compact list of algorithms that are commonly used in unfolding
+    ./Algorithm/naming.txt # naming ideas # Deprecated since there are no further plans of making new algorithms
+Google Keep:
+    Paper/thesis writing workflow for future compatibility # thesis/presentation writing procedure
+    Overnight stuff # same thing that you copied off of Google drive
+
+Other life stuff: Google Keep:
+    Songs # songs to listen to
+    Book list # books that I want to read
+    Parkour Park # Parkour park meeting with Oxford city council;
+        (goes along well with ~/Documents/Work/27.ParkourOxford/PKParkApplication.txt)
+    Comptuer stuff: "Unix System" and "IF re-installation"
+    House change: address changes
