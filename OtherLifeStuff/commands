@@ -62,6 +62,7 @@ alt+home		#show_at_center
 	ctrl+l			#highlight current line
 	ctrl+j			#bring next line up by removing newline character at the end of current line
 alt+shift+right click   #deselect (remove from multiple selection) current selection
+alt+shift+up/down   #column_select (i.e. the shift+right click drag rectangle select thing)
 Edit->Code Folding->Level 3
 edit "/home/ocean/.config/sublime-text-3/Packages/User/Package Control.sublime-settings" then git clone package to /home/ocean/.config/sublime-text-3/Packages	#to install package, because it seems package control doesn't work.
 best font size: 11.7
@@ -125,12 +126,20 @@ factor	#factorize any integers
 strings #see all readable/printable/non-special character text inside a binary file/ executable
 
 ____Drawing softwares:
-- MyPaint (super simple/no frills)
+Preferred, in descending order of complexity/usability:
+- Xournal
+- MyPaint
+- Write (simpler version of Xournal++)
+- kolourpaint: same as paint
+- ~/tablet/Alchemy (too simple)
+
+Popular:
 - Krita (SVG, has layers, can make animations)
 - GIMP (wide support)
-
-    - Synfig (Not donwloaded yet) (Animation based)
-    - (Alchemy is the same as Mypaint
+Phone:
+DrawExpress: flow charty stuff
+Conept: advanced drawing.
+Skedio: something between the two.
 ____
 
 !!	#re-run last command
